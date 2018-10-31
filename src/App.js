@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import './App.scss';
 import * as data from './en_US.json'
+import Mugshot from './Mugshot.js';
+import Timeline from './Timeline.js';
+import SkillsSection from './SkillsSection.js';
+import Contact from './Contact.js';
+
+/***********************
+
+fas:
+
+
+fas fa-filter
+
+
+***********************/
 
 class App extends Component {
   render() {
@@ -10,10 +24,8 @@ class App extends Component {
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <a className="navbar-brand" href="#intro">{data.fullName}</a>
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                </li>
               <li className="nav-item">
-                <a className="nav-link" href="#history">History</a>
+                <a className="nav-link" href="#timeline">Timeline</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#skills">Skills</a>
@@ -29,31 +41,19 @@ class App extends Component {
 
           <main>
 
-            <h1 id='intro'>{data.fullName}</h1>
-            <img src='images/lionel.jpg' className='mugshot' alt='Lionel Rowe mugshot' />
-            <p>{data.missionStatement}</p>
-            {/*<i className="fas fa-filter"></i>*/}
-
-            <div className='row'>
-              <div className='col-sm'>
-                <h2 id='history'>History</h2>
-                <p>..</p>
-              </div>
+          <div className='row'>
+            <div className='col-sm'>
+              <h1 id='intro'>{data.fullName}</h1>
+              <Mugshot path='images/lionel.jpg' />
+              <p>{data.missionStatement}</p>
             </div>
+          </div>
 
-            <div className='row'>
-              <div className='col-sm'>
-                <h2 id='skills'>Skills</h2>
-                <p>..</p>
-              </div>
-            </div>
+          <Timeline />
 
-            <div className='row'>
-              <div className='col-sm'>
-                <h2 id='contact'>Contact</h2>
-                <p>..</p>
-              </div>
-            </div>
+          <SkillsSection />
+
+          <Contact />
 
           </main>
         </div>
