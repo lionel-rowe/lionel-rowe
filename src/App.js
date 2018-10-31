@@ -8,11 +8,10 @@ class App extends Component {
       <div className="App">
         <header>
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a className="navbar-brand" href="#">Lionel Roweʼs CV</a>
+            <a className="navbar-brand" href="#intro">{data.fullName}</a>
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#intro">Intro <span className="sr-only">(current)</span></a>
-              </li>
+                </li>
               <li className="nav-item">
                 <a className="nav-link" href="#history">History</a>
               </li>
