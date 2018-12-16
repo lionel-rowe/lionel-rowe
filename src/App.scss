@@ -1,25 +1,28 @@
 // https://colorhunt.co/palette/131842
 
-$light-color: #fbf9fa;
-$bg: $light-color;
-$dark-color: #2b2024;
-$base-text-color: $dark-color;
-$hl: #fd0054;
-$heading-text-color: #a80038;
-$main-heading-color: lighten($base-text-color, 20);
+/* Bring in your custom variables */
+// @import '_variables.scss';
 
-$base-font: "Open Sans", sans-serif;
-$heading-font: "Roboto", sans-serif;
+/* or just overwrite a variable */
+
+// @import 'bootstrap-overrides.scss';
+// @import 'bootstrap/bootstrap.scss';
+
+
+$light: #fbf9fa;
+$bg: $light;
+$dark: #2b2024;
+$base-text-color: $dark;
+$hl: #fd0054;
+
+$main-heading-color: lighten($dark, 20);
+
+$animation-speed: 0.35s;
+$box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.35);
+$inner-box-shadow: inset $box-shadow;
 
 body {
-  background: $bg;
-  color: $base-text-color;
-  font-family: $base-font;
   text-align: center;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $heading-font;
 }
 
 h1 {
@@ -27,56 +30,103 @@ h1 {
   margin: 20px 0 0 0;
 }
 
-h2, h3, h4, h5, h6 {
-  color: $heading-text-color;
-}
-
-.bg-dark {
-  background: $dark-color !important;
-}
-
 div.mugshot-container {
-  position: relative;
-
-  img.mugshot {
-    object-fit: cover;
-    height: 300px;
-    width: 300px;
-    border-radius: 50%;
-    margin: 20px 0;
-    position: relative;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
   div.mugshot-frame {
-    height: 300px;
-    width: 300px;
+    min-height: 300px;
+    min-width: 300px;
     border-radius: 50%;
-    border: 8px solid $light-color;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5), inset 2px 2px 10px rgba(0, 0, 0, 0.3);
+    border: 8px solid $light;
+    box-shadow: $box-shadow, $inner-box-shadow;
     margin: 20px 0;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
 
-.container-fluid {
-  padding: 0 100px;
+@media screen and (max-width: 450px) {
+  div.mugshot-container div.mugshot-frame {
+    min-height: 250px;
+    min-width: 250px;
+  }
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding-left: 0;
+  flex-wrap: wrap;
 }
 
 .skill-icon {
+  position: relative;
+  height: 120px;
+  flex: 0 0 2.5em;
+  width: 2.5em;
+  text-align: center;
+  color: #bbb;
   display: inline-block;
   font-size: 3em;
   padding: 30px;
 }
 
 .skill-icon-inner {
-  transition: color 0.35s;
+  transition: all $animation-speed;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.invisigreppable {
+// h1, h2 {
+//   padding-top: 56px + 20px;
+//   margin-top: 0;
+// }
+
+// h2 {
+//   margin-top: -56px;
+// }
+
+// header {
+//   padding-top: 56px;
+// }
+
+// .navbar {
+//   position: fixed;
+//   width: 100vw;
+//   z-index: 1;
+//   top: 0;
+//   box-shadow: $box-shadow;
+//   padding: 8px 116px; //originally: 8px 16px
+//   width: calc(100% + 200px);
+//   left: -100px;
+// }
+
+// section {
+//   height: 1000px;
+// }
+
+// footer {
+//   padding: 30px;
+//   margin-top: 30px;
+//   margin-left: -10px;
+//   margin-right: -10px;
+//   text-align: center;
+//   font-size: 0.8em;
+//   background: #cfd8dc;
+// }
+
+.sr-only {
   opacity: 0;
   display: inline-block;
   position: absolute;
 }
+
+// .unstyled-link {
+
+// }

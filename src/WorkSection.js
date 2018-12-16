@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-export default class Contact extends Component {
+export default class WorkSection extends Component {
   render() {
     return (
-      <div className='row'>
+      <section className='row'>
         <div className='col-sm'>
-          <h2 id='contact'>Contact</h2>
+          <h2 id='timeline'>Work</h2>
           <p>..</p>
         </div>
-      </div>
+      </section>
     );
   }
 }

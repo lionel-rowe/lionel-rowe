@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import * as data from './en_US.json'
 import SkillIcon from './SkillIcon.js';
+import { withNamespaces } from "react-i18next";
 
-const skills = data.skills;
-
-export default class SkillsSection extends Component {
+class SkillsSection extends Component {
   render() {
+    const { t } = this.props;
+
     return (
-      <div className='row'>
+      <section className='row'>
         <div className='col-sm'>
           <h2 id='skills'>Skills</h2>
-          <ul style={{listStyleType: 'none', paddingLeft: 0}}>
-            {skills.map((skill, idx) => <SkillIcon skill={skill} key={idx} />)}
+          <ul className='skills-list'>
+
+            {t('skills', { returnObjects: true }).map((skill, idx) => <SkillIcon skill={skill} key={idx} />)}
           </ul>
         </div>
-      </div>
+      </section>
     );
   }
 }
+
+export default withNamespaces("translations")(SkillsSection);
