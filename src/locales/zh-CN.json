@@ -1,9 +1,17 @@
 {
   "ui": {
+    "about": "关于我",
     "home": "首页",
     "work": "事业",
     "skills": "技能",
-    "contact": "联系方式"
+    "contact": "联系方式",
+
+    "email": {
+      "yourEmail": "您的邮箱",
+      "subject": "标题",
+      "body": "内容",
+      "send": "发送"
+    }
   },
 
   "meta": {
@@ -12,6 +20,7 @@
   },
 
   "fullName": "罗宁",
+  "mainHeading": "罗宁 · 全栈互联网开发",
   "history": [],
   "contactInfo": {}
 }

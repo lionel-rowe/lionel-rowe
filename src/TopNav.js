@@ -1,20 +1,15 @@
 import React from 'react';
 
-import { Link } from "react-router-dom";
-import { withNamespaces } from "react-i18next";
+import { Link } from '@reach/router';
+import { withNamespaces } from 'react-i18next';
 
 import { withStyles, AppBar, Toolbar, Typography, IconButton, MenuItem, Menu } from '@material-ui/core';
 import { Translate } from '@material-ui/icons';
 
-// import { Route } from "react-router-dom";
-
-// import IntroSection from './IntroSection.js';
-// import TimelineSection from './TimelineSection.js';
-// import SkillsSection from './SkillsSection.js';
-// import ContactSection from './ContactSection.js';
-
-
-const styles = {
+const styles = theme => ({
+  gradientBar: {
+    background: `linear-gradient(to right, ${theme.palette.primary.gradient})`
+  },
   fullWidthTextLeft: {
     display: 'flex',
     flexGrow: 1,
@@ -24,10 +19,7 @@ const styles = {
     color: 'inherit',
     textDecoration: 'none'
   }
-};
-
-
-// const
+});
 
 class TopNav extends React.Component {
 
@@ -63,12 +55,12 @@ class TopNav extends React.Component {
     const { anchorEl } = this.state;
 
     return (
-      <AppBar component='nav' position="fixed">
+      <AppBar component='nav' position='fixed' className={classes.gradientBar}>
         <Toolbar>
           <div className={classes.fullWidthTextLeft}>
-            <Link to="/" className={classes.unstyledLink}>
-              <Typography variant="h6" color="inherit">
-                {t('fullName')}
+            <Link to='/' className={classes.unstyledLink}>
+              <Typography variant='h6' color='inherit'>
+                {t('mainHeading')}
               </Typography>
             </Link>
           </div>
@@ -76,14 +68,14 @@ class TopNav extends React.Component {
           <div>
             <IconButton
               aria-owns={ anchorEl ? 'menu-appbar' : undefined }
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={this.handleMenuOpen}
-              color="inherit"
+              color='inherit'
             >
               <Translate />
             </IconButton>
             <Menu
-              id="menu-appbar"
+              id='menu-appbar'
               anchorEl={anchorEl}
               anchorOrigin={{
                 vertical: 'top',
@@ -107,4 +99,4 @@ class TopNav extends React.Component {
   }
 }
 
-export default withNamespaces("translations")(withStyles(styles)(TopNav));
+export default withNamespaces('translations')(withStyles(styles)(TopNav));

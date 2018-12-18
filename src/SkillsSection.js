@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SkillIcon from './SkillIcon.js';
-import { withNamespaces } from "react-i18next";
+import { withNamespaces } from 'react-i18next';
+import { Typography } from '@material-ui/core';
 
-class SkillsSection extends Component {
-  render() {
-    const { t } = this.props;
+const SkillsSection = props => {
+  const { t } = props;
 
-    return (
-      <section className='row'>
-        <div className='col-sm'>
-          <h2 id='skills'>Skills</h2>
-          <ul className='skills-list'>
-
-            {t('skills', { returnObjects: true }).map((skill, idx) => <SkillIcon skill={skill} key={idx} />)}
-          </ul>
-        </div>
-      </section>
-    );
-  }
+  return (
+    <section>
+      <Typography variant='h1'>{t('ui.skills')}</Typography>
+      <ul className='skills-list'>
+        {t('skills', { returnObjects: true }).map((skill, idx) => <SkillIcon skill={skill} key={idx} />)}
+      </ul>
+    </section>
+  );
 }
 
-export default withNamespaces("translations")(SkillsSection);
+export default withNamespaces('translations')(SkillsSection);

@@ -25,10 +25,10 @@ body {
   text-align: center;
 }
 
-h1 {
-  color: $main-heading-color;
-  margin: 20px 0 0 0;
-}
+// h1 {
+//   color: $main-heading-color;
+//   margin: 20px 0 0 0;
+// }
 
 div.mugshot-container {
   display: flex;
@@ -37,8 +37,8 @@ div.mugshot-container {
   justify-content: center;
 
   div.mugshot-frame {
-    min-height: 300px;
-    min-width: 300px;
+    min-height: 250px;
+    min-width: 250px;
     border-radius: 50%;
     border: 8px solid $light;
     box-shadow: $box-shadow, $inner-box-shadow;
@@ -48,8 +48,8 @@ div.mugshot-container {
 
 @media screen and (max-width: 450px) {
   div.mugshot-container div.mugshot-frame {
-    min-height: 250px;
-    min-width: 250px;
+    min-height: 200px;
+    min-width: 200px;
   }
 }
 

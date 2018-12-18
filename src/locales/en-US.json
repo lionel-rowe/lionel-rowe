@@ -1,9 +1,17 @@
 {
   "ui": {
+    "about": "About",
     "home": "Home",
     "work": "Work",
     "skills": "Skills",
-    "contact": "Contact"
+    "contact": "Contact",
+
+    "email": {
+      "yourEmail": "Your email address",
+      "subject": "Subject",
+      "body": "Body",
+      "send": "Send"
+    }
   },
 
   "meta": {
@@ -15,55 +23,69 @@
   },
 
   "fullName": "Lionel Rowe",
+  "mainHeading": "Lionel Rowe · Full-Stack Web Developer",
   "photo": {
     "url": "images/lionel.jpg",
     "alt": "Lionel Rowe mugshot",
-    "scale": 1.05
+    "scale": 1
   },
-  "history": [],
+  "ctaViewMyWork": "View my Work",
   "skills": [
     {
       "desc": "React",
-      "icon": "fab fa-react",
+      "icon": "fab react",
       "color": "#00d1f7",
       "url": "https://reactjs.org/"
     },
     {
       "desc": "JavaScript",
-      "icon": "fab fa-js",
+      "icon": "fab js",
       "color": "#f0db4f",
       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
     },
     {
       "desc": "HTML",
-      "icon": "fab fa-html5",
+      "icon": "fab html5",
       "color": "#e44d25",
       "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
     },
     {
       "desc": "CSS",
-      "icon": "fab fa-css3",
+      "icon": "fab css3",
       "color": "#264de4",
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
     },
     {
       "desc": "Node JS",
-      "icon": "fab fa-node-js",
+      "icon": "fab node-js",
       "color": "#83cc29",
       "url": "https://nodejs.org/en/"
     },
     {
       "desc": "Ruby",
-      "icon": "fa fa-gem",
+      "icon": "fas gem",
       "color": "#ec1622",
       "url": "https://www.ruby-lang.org/"
     },
     {
       "desc": "Sass",
-      "icon": "fab fa-sass",
+      "icon": "fab sass",
       "color": "#cc679a",
       "url": "https://sass-lang.com/"
     }
   ],
+
+  "projects": [
+    {
+      "name": "Gestuno",
+      "img": "https://res.cloudinary.com/lionelrowe/image/upload/v1544093972/cover_o4e2nn.png",
+      "url": "https://www.gest.uno/",
+      "github": "https://github.com/gestuno/gestuno-rails",
+      "shortDesc": "[gestuno shortDesc]",
+      "fullDesc": "[fullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDesc]",
+      "technologies": ["Rails", "Sass", "Twilio", "Stripe"]
+    }
+  ],
+
   "contactInfo": {}
 }

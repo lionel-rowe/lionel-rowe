@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route } from "react-router-dom";
+import { Router } from '@reach/router';
 
 import { Grid } from '@material-ui/core';
 import IntroSection from './IntroSection.js';
@@ -31,11 +31,11 @@ export default function() {
         style={{padding: '0 20px'}}
         component='main'
       >
-        <Grid item xs={12} sm={10} md={10} lg={8} xl={6}>
-          <Route exact path="/" component={IntroSection} />
-          <Route path="/work" component={WorkSection} />
-          <Route path="/skills" component={SkillsSection} />
-          <Route path="/contact" component={ContactSection} />
+        <Grid item xs={12} sm={10} md={10} lg={8} xl={6} component={Router}>
+          <IntroSection path='/' />
+          <WorkSection path='/work' />
+          <SkillsSection path='/skills' />
+          <ContactSection path='/contact' />
         </Grid>
       </Grid>
     </Scrollbars>

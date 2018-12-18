@@ -1,14 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class WorkSection extends Component {
-  render() {
-    return (
-      <section className='row'>
-        <div className='col-sm'>
-          <h2 id='timeline'>Work</h2>
-          <p>..</p>
-        </div>
-      </section>
-    );
-  }
+import { withNamespaces } from 'react-i18next';
+
+import ProjectCard from './ProjectCard.js';
+
+import { Typography } from '@material-ui/core';
+
+const WorkSection = props => {
+
+  const { t } = props;
+
+  return (
+    <section>
+      <Typography variant='h1'>{t('ui.work')}</Typography>
+      <div>
+        {t('projects', { returnObjects: true }).map((project, idx) => <ProjectCard key={idx} {...project} />)}
+      </div>
+    </section>
+  );
 }
+
+export default withNamespaces('translations')(WorkSection)

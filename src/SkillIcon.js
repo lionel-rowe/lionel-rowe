@@ -1,40 +1,71 @@
 import React, { Component } from 'react';
 
-export default class SkillIcon extends Component {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-  state = {hovered: false}
+import { Tooltip } from '@material-ui/core';
+
+class SkillIcon extends Component {
+
+  constructor(props) {
+    super(props);
+    this.linkEl = React.createRef();
+    this.hasLinkElFocus = this.hasLinkElFocus.bind(this);
+  }
+
+  hasLinkElFocus = () => document.activeElement === this.linkEl.current;
+
+  state = {
+    fauxcused: false
+  };
 
   render() {
-    const skill = this.props.skill;
+    const { skill } = this.props;
+
     return (
-      <a href={skill.url} target='_blank' rel='noopener noreferrer'>
+
+      <a
+        href={skill.url}
+        ref={this.linkEl}
+        target='_blank' rel='noopener noreferrer'
+        onFocus={() => this.setState({fauxcused: true})}
+        onBlur={() => this.setState({fauxcused: false})}
+        style={{outline: 'none'}}
+      >
         <li
           className='skill-icon'
           style={{position: 'relative'}}
-          onMouseEnter={() => this.setState({hovered: true})}
-          onMouseLeave={() => this.setState({hovered: false})}
-          title={this.state.hovered ? skill.desc : null /*
-          must be set to null on mouseleave, otherwise enlarged icon size may cause wrong title to display
-          */}
-        >
-          <i
-            className={skill.icon + ' skill-icon-inner'}
-            style={this.state.hovered
-              ? {
-                color: skill.color,
-                fontSize: '1.5em'
-              }
-              : null
+          onMouseEnter={() => this.setState({fauxcused: true})}
+          onMouseLeave={() => {
+            if (!this.hasLinkElFocus()) {
+              this.setState({fauxcused: false});
             }
-          >
-            <span className='sr-only'>{skill.desc}</span> {/* also `grep`able! */}
-          </i>
+          }}
+        >
+
+        <Tooltip
+          title={skill.desc}
+          open={this.state.fauxcused}
+        >
+
+          <FontAwesomeIcon className='skill-icon-inner' icon={skill.icon.split(' ')}
+
+          style={this.state.fauxcused
+            ? {
+              color: skill.color,
+              fontSize: '1.5em',
+              outline: '0px solid black'
+            }
+            : null
+          }
+
+          />
+
+          </Tooltip>
+          <span className='sr-only'>{skill.desc}</span> {/* also `grep`able! */}
         </li>
       </a>
     );
   }
 }
 
-
-
-
+export default SkillIcon;
