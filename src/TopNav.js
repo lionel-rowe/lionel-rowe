@@ -60,7 +60,7 @@ class TopNav extends React.Component {
           <div className={classes.fullWidthTextLeft}>
             <Link to='/' className={classes.unstyledLink}>
               <Typography variant='h6' color='inherit'>
-                {t('mainHeading')}
+                {t('fullName')}
               </Typography>
             </Link>
           </div>

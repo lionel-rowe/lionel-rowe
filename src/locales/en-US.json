@@ -23,7 +23,7 @@
   },
 
   "fullName": "Lionel Rowe",
-  "mainHeading": "Lionel Rowe · Full-Stack Web Developer",
+  "tagline": "Full-Stack Web Developer",
   "photo": {
     "url": "images/lionel.jpg",
     "alt": "Lionel Rowe mugshot",
@@ -81,9 +81,36 @@
       "img": "https://res.cloudinary.com/lionelrowe/image/upload/v1544093972/cover_o4e2nn.png",
       "url": "https://www.gest.uno/",
       "github": "https://github.com/gestuno/gestuno-rails",
-      "shortDesc": "[gestuno shortDesc]",
-      "fullDesc": "[fullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDescfullDesc]",
+      "shortDesc": "{{Gestuno shortDesc}}",
+      "fullDesc": null,
       "technologies": ["Rails", "Sass", "Twilio", "Stripe"]
+    },
+    {
+      "name": "Symbolika",
+      "img": null,
+      "url": "https://chrome.google.com/webstore/detail/symbolika/llfbffepkepmcdakomdgenihlkaapoen",
+      "github": "https://github.com/lionel-rowe/symbolika",
+      "shortDesc": "{{Symbolika shortDesc}}",
+      "fullDesc": null,
+      "technologies": ["React", "ElasticLunr"]
+    },
+    {
+      "name": "Mix-a-Lot",
+      "img": null,
+      "url": "http://mix-a-lot.herokuapp.com",
+      "github": "https://github.com/SebastienPoncelet/rails-mister-cocktail",
+      "shortDesc": "{{Mix-a-Lot shortDesc}}",
+      "fullDesc": null,
+      "technologies": ["Rails", "Bootstrap", "Sass"]
+    },
+    {
+      "name": "Secret Gardens",
+      "img": null,
+      "url": "https://secret-gardens.herokuapp.com",
+      "github": "https://github.com/lionel-rowe/secret-gardens",
+      "shortDesc": "{{Secret Gardens shortDesc}}",
+      "fullDesc": null,
+      "technologies": ["Rails", "React", "Material UI"]
     }
   ],
 

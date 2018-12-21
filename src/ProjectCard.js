@@ -8,22 +8,33 @@ const scale = 0.33;
 const [width, height] = aspectRatio.map(el => el * scale);
 
 const styles = {
-  card: { width },
+  card: {
+    width,
+    marginBottom: 50
+  },
   media: { height }
 };
 
 //TODO: add drawer (on parent)
 
+const fallbackImg = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gwUDQwBXrnRKQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAADElEQVQI12Po6OgAAAM0AZkQj9/uAAAAAElFTkSuQmCC'; //plain gray bg
+
 function ProjectCard(props) {
 
-  const { classes, img, name, url, github, shortDesc, fullDesc, technologies } = props;
+  const { classes } = props;
+  const { projectId, //TODO
+    img, name, url, github, shortDesc, fullDesc, technologies } = props;
+
+  const showPanel = () => {}; //TODO
 
   return (
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea
+        onClick={() => showPanel()}
+      >
         <CardMedia
           className={classes.media}
-          image={img}
+          image={img || fallbackImg}
           title={name}
         />
         <CardContent>
@@ -44,13 +55,24 @@ function ProjectCard(props) {
         // justifyContent: 'center'
       }}>
 
-        <Button target='_blank' href={url}>
-          <FontAwesomeIcon icon={['fas', 'link']} />
-        </Button>
+        {
+          url ? (
+            <Button target='_blank' href={url}>
+              <FontAwesomeIcon icon={['fas', 'link']} />
+            </Button>
+          ) : null
+        }
 
-        <Button target='_blank' href={github}>
-          <FontAwesomeIcon icon={['fab', 'github']} />
-        </Button>
+        {
+          github ? (
+            <Button target='_blank' href={github}>
+              <FontAwesomeIcon icon={['fab', 'github']} />
+            </Button>
+          ) : null
+        }
+
+
+
 
 
       </CardActions>

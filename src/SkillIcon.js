@@ -8,11 +8,11 @@ class SkillIcon extends Component {
 
   constructor(props) {
     super(props);
-    this.linkEl = React.createRef();
-    this.hasLinkElFocus = this.hasLinkElFocus.bind(this);
+    this.linkRef = React.createRef();
+    this.hasLinkRefFocus = this.hasLinkRefFocus.bind(this);
   }
 
-  hasLinkElFocus = () => document.activeElement === this.linkEl.current;
+  hasLinkRefFocus = () => document.activeElement === this.linkRef.current;
 
   state = {
     fauxcused: false
@@ -25,7 +25,7 @@ class SkillIcon extends Component {
 
       <a
         href={skill.url}
-        ref={this.linkEl}
+        ref={this.linkRef}
         target='_blank' rel='noopener noreferrer'
         onFocus={() => this.setState({fauxcused: true})}
         onBlur={() => this.setState({fauxcused: false})}
@@ -36,7 +36,7 @@ class SkillIcon extends Component {
           style={{position: 'relative'}}
           onMouseEnter={() => this.setState({fauxcused: true})}
           onMouseLeave={() => {
-            if (!this.hasLinkElFocus()) {
+            if (!this.hasLinkRefFocus()) {
               this.setState({fauxcused: false});
             }
           }}

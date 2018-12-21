@@ -4,7 +4,7 @@ import { withNamespaces } from 'react-i18next';
 
 import ProjectCard from './ProjectCard.js';
 
-import { Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 const WorkSection = props => {
 
@@ -14,7 +14,24 @@ const WorkSection = props => {
     <section>
       <Typography variant='h1'>{t('ui.work')}</Typography>
       <div>
-        {t('projects', { returnObjects: true }).map((project, idx) => <ProjectCard key={idx} {...project} />)}
+
+      <Grid
+        container
+        direction='row'
+        justify='space-around'
+        style={{padding: 0}}
+      >
+
+        {t('projects', { returnObjects: true }).map((project, idx) => (
+          <Grid item
+            key={idx}
+            xs={12} sm={12} md={6} lg={6} xl={4}
+            component={() => <ProjectCard {...project} />}
+          />
+        ))}
+
+      </Grid>
+
       </div>
     </section>
   );
