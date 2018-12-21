@@ -9,10 +9,15 @@ const [width, height] = aspectRatio.map(el => el * scale);
 
 const styles = {
   card: {
-    width,
-    marginBottom: 50
+    // width: '100%',
+    // maxWidth: width,
+    flex: `0 1 ${width}px`,
+    margin: '0 20px 50px 20px'
   },
-  media: { height }
+  media: {
+    backgroundPosition: '0 0',
+    height: height
+  }
 };
 
 //TODO: add drawer (on parent)
