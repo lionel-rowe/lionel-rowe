@@ -78,7 +78,7 @@
   "projects": [
     {
       "name": "Gestuno",
-      "img": "https://res.cloudinary.com/lionelrowe/image/upload/v1544093972/cover_o4e2nn.png",
+      "img": "images/gestuno_cover_img.png",
       "url": "https://www.gest.uno/",
       "github": "https://github.com/gestuno/gestuno-rails",
       "shortDesc": "{{Gestuno shortDesc}}",
@@ -87,21 +87,12 @@
     },
     {
       "name": "Symbolika",
-      "img": null,
+      "img": "images/symbolika_screen_2.png",
       "url": "https://chrome.google.com/webstore/detail/symbolika/llfbffepkepmcdakomdgenihlkaapoen",
       "github": "https://github.com/lionel-rowe/symbolika",
       "shortDesc": "{{Symbolika shortDesc}}",
       "fullDesc": null,
       "technologies": ["React", "ElasticLunr"]
-    },
-    {
-      "name": "Mix-a-Lot",
-      "img": null,
-      "url": "http://mix-a-lot.herokuapp.com",
-      "github": "https://github.com/SebastienPoncelet/rails-mister-cocktail",
-      "shortDesc": "{{Mix-a-Lot shortDesc}}",
-      "fullDesc": null,
-      "technologies": ["Rails", "Bootstrap", "Sass"]
     },
     {
       "name": "Secret Gardens",
@@ -111,6 +102,15 @@
       "shortDesc": "{{Secret Gardens shortDesc}}",
       "fullDesc": null,
       "technologies": ["Rails", "React", "Material UI"]
+    },
+    {
+      "name": "Mix-a-Lot",
+      "img": null,
+      "url": "http://mix-a-lot.herokuapp.com",
+      "github": "https://github.com/SebastienPoncelet/rails-mister-cocktail",
+      "shortDesc": "{{Mix-a-Lot shortDesc}}",
+      "fullDesc": null,
+      "technologies": ["Rails", "Bootstrap", "Sass"]
     }
   ],
 

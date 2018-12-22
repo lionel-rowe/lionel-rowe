@@ -7,18 +7,20 @@ const aspectRatio = [1200, 700];
 const scale = 0.33;
 const [width, height] = aspectRatio.map(el => el * scale);
 
-const styles = {
+const styles = theme => ({
   card: {
-    // width: '100%',
-    // maxWidth: width,
     flex: `0 1 ${width}px`,
-    margin: '0 20px 50px 20px'
+    margin: '0 20px 50px 20px',
+    [theme.breakpoints.down('xs')]: {
+      margin: '0 0 50px 0'
+    }
   },
   media: {
-    backgroundPosition: '0 0',
+    // backgroundPosition: '0 0', //top left
+    backgroundPositionY: 0, //top
     height: height
   }
-};
+});
 
 //TODO: add drawer (on parent)
 
@@ -75,10 +77,6 @@ function ProjectCard(props) {
             </Button>
           ) : null
         }
-
-
-
-
 
       </CardActions>
     </Card>

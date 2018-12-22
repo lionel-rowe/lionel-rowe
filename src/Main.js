@@ -4,7 +4,7 @@ import { Router } from '@reach/router';
 
 import { Grid } from '@material-ui/core';
 
-import MaybeCustomScrollbars from './MaybeCustomScrollbars.js';
+import ScrollArea from './ScrollArea.js';
 import IntroSection from './IntroSection.js';
 import WorkSection from './WorkSection.js';
 import SkillsSection from './SkillsSection.js';
@@ -12,7 +12,7 @@ import ContactSection from './ContactSection.js';
 
 export default function() {
   return (
-    <MaybeCustomScrollbars>
+    <ScrollArea>
       <Grid
         container
         direction='row'
@@ -26,6 +26,6 @@ export default function() {
         <SkillsSection path='/skills' />
         <ContactSection path='/contact' />
       </Grid>
-    </MaybeCustomScrollbars>
+    </ScrollArea>
   );
 }

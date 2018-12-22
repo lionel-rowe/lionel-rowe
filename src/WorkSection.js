@@ -20,12 +20,7 @@ const WorkSection = props => {
         style={{padding: 0}}
       >
         {t('projects', { returnObjects: true }).map((project, idx) => (
-          <Grid item
-            key={idx}
-            xs={12} sm={12} md={6} lg={6} xl={4}
-            style={{position: 'relative'}}
-            component={() => <ProjectCard {...project} />}
-          />
+          <ProjectCard key={idx} {...project} />
         ))}
       </Grid>
     </section>

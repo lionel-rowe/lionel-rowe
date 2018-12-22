@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { Tooltip } from '@material-ui/core';
+import CustomTooltip from './CustomTooltip.js';
 
 class SkillIcon extends Component {
 
@@ -26,7 +26,8 @@ class SkillIcon extends Component {
       <a
         href={skill.url}
         ref={this.linkRef}
-        target='_blank' rel='noopener noreferrer'
+        target='_blank'
+        rel='noopener noreferrer'
         onFocus={() => this.setState({fauxcused: true})}
         onBlur={() => this.setState({fauxcused: false})}
         style={{outline: 'none'}}
@@ -41,26 +42,24 @@ class SkillIcon extends Component {
             }
           }}
         >
+          <CustomTooltip
+            title={skill.desc}
+            open={this.state.fauxcused}
+          >
+            <FontAwesomeIcon className='skill-icon-inner' icon={skill.icon.split(' ')}
 
-        <Tooltip
-          title={skill.desc}
-          open={this.state.fauxcused}
-        >
+              style={this.state.fauxcused
+                ? {
+                  color: skill.color,
+                  fontSize: '1.5em',
+                  outline: '0px solid black'
+                }
+                : null
+              }
 
-          <FontAwesomeIcon className='skill-icon-inner' icon={skill.icon.split(' ')}
+            />
 
-          style={this.state.fauxcused
-            ? {
-              color: skill.color,
-              fontSize: '1.5em',
-              outline: '0px solid black'
-            }
-            : null
-          }
-
-          />
-
-          </Tooltip>
+          </CustomTooltip>
           <span className='sr-only'>{skill.desc}</span> {/* also `grep`able! */}
         </li>
       </a>

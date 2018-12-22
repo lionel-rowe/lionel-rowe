@@ -2,23 +2,55 @@ import React from 'react';
 
 import { Scrollbars } from 'react-custom-scrollbars';
 
+import { withStyles } from '@material-ui/core';
+
 import { globalHistory } from '@reach/router';
 
-import detectmobilebrowser from './detectmobilebrowser.js';
+import detectMobileBrowser from './detectMobileBrowser.js';
 
-//TODO: put these vars a store
-const topNavMargin = 64; //TODO: add breakpoint - increases/decreases based on screen width
-const bottomBarMargin = 56;
-const totalNavHeight = topNavMargin + bottomBarMargin;
+const isMobile = detectMobileBrowser();
 
-const universalStyles = {
-  marginTop: topNavMargin,
-  marginBottom: bottomBarMargin
+const styles = theme => {
+
+  const { minHeight, ...toolbarBreakpoints } = theme.mixins.toolbar;
+
+  const bottomBarMargin = minHeight;
+
+  const topNavMargins = Object.keys(toolbarBreakpoints).reduce((obj, key) => {
+    obj[key] = toolbarBreakpoints[key].minHeight;
+    return obj;
+  }, {'@media all': minHeight});
+
+  const totalHeightsMinusNavs = Object.keys(topNavMargins).reduce((obj, key) => {
+    // obj[key] = `calc(100vh - ${topNavMargins[key] + minHeight}px) !important`;
+    obj[key] = `calc(100vh - ${topNavMargins[key] + minHeight}px)`;
+    //must be `!important` to override `Scrollbars` component default
+    return obj;
+  }, {});
+
+  const attrSpecificBreakpoints = (breakpoints, attr) => {
+    return Object.keys(breakpoints).reduce((obj, key) => {
+      obj[key] = {};
+      obj[key][attr] = breakpoints[key];
+      return obj;
+    }, {})
+  }
+
+  return {
+    scrollArea: {
+      marginBottom: bottomBarMargin,
+      ...attrSpecificBreakpoints(topNavMargins, 'marginTop')
+    },
+    customScrollbars: {
+      width: '100vw',
+      ...attrSpecificBreakpoints(totalHeightsMinusNavs, 'minHeight')
+    },
+    notSoCustomScrollbars: attrSpecificBreakpoints(totalHeightsMinusNavs, 'minHeight')
+  };
 };
 
-const isMobile = detectmobilebrowser();
 
-class MaybeCustomScrollbars extends React.Component {
+class ScrollArea extends React.Component {
 
   constructor(props) {
     super(props);
@@ -64,30 +96,31 @@ class MaybeCustomScrollbars extends React.Component {
   }
 
   render() {
+    const { classes, ...passThroughProps } = this.props;
+
     return !isMobile ? (
       <Scrollbars
+
+        id='customScrollbars'
+
         hideTracksWhenNotNeeded={true}
 
-        style={{
-          width: '100vw',
-          height: `calc(100vh - ${totalNavHeight}px)`,
-          ...universalStyles
-        }}
+        className={[classes.customScrollbars, classes.scrollArea].join(' ')}
 
         renderThumbVertical={this.renderThumb}
         renderThumbHorizontal={this.renderThumb}
 
         ref={this.scrollbarRef}
 
-        {...this.props}
+        {...passThroughProps}
       />
     ) : (
       <div
-        style={{minHeight: '100vh', ...universalStyles}}
-        {...this.props}
+        className={[classes.notSoCustomScrollbars, classes.scrollArea].join(' ')}
+        {...passThroughProps}
       />
     );
   }
 }
 
-export default MaybeCustomScrollbars;
+export default withStyles(styles)(ScrollArea);
