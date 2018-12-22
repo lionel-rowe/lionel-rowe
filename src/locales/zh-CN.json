@@ -1,0 +1,26 @@
+{
+  "ui": {
+    "about": "关于我",
+    "home": "首页",
+    "work": "事业",
+    "skills": "技能",
+    "contact": "联系方式",
+
+    "email": {
+      "yourEmail": "您的邮箱",
+      "subject": "标题",
+      "body": "内容",
+      "send": "发送"
+    }
+  },
+
+  "meta": {
+    "title": "罗宁 · 全栈互联网开发 · 简历",
+    "description": "全栈互联网开发，致力于 React JS、Ruby on Rails、软件本土化。之前：阿里云、华为等 web app 技术写作、本土化。目标：造出能够让用户成为最牛的自己的工具！"
+  },
+
+  "fullName": "罗宁",
+  "tagline": "全栈互联网开发",
+  "history": [],
+  "contactInfo": {}
+}

@@ -1,12 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Mugshot extends Component {
-  render() {
-    return (
-      <div className='mugshot-container'>
-        <img src='images/lionel.jpg' className='mugshot' alt='Lionel Rowe mugshot' />
-        <div className='mugshot-frame' />
-      </div>
-    );
-  }
+const Mugshot = props => {
+
+  const { path, scale, alt } = props;
+
+  return (
+    <div className='mugshot-container'>
+      <div
+        className='mugshot-frame'
+        style={{
+          background: `url(${path})`,
+          backgroundSize: !scale ? 'cover' : scale * 300,
+          backgroundClip: 'border-box',
+          backgroundPosition: 'center'
+        }}
+        role='img'
+        aria-label={alt}
+      />
+    </div>
+  );
 }
+
+export default Mugshot;

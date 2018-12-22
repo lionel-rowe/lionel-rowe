@@ -14,6 +14,8 @@ process.on('unhandledRejection', err => {
 // Ensure environment variables are read.
 require('../config/env');
 
+// properly set metadata variables in `index.html`
+require('../config/meta');
 
 const path = require('path');
 const chalk = require('chalk');

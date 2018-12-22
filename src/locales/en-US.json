@@ -1,0 +1,118 @@
+{
+  "ui": {
+    "about": "About",
+    "home": "Home",
+    "work": "Work",
+    "skills": "Skills",
+    "contact": "Contact",
+
+    "email": {
+      "yourEmail": "Your email address",
+      "subject": "Subject",
+      "body": "Body",
+      "send": "Send"
+    }
+  },
+
+  "meta": {
+    "title": "Lionel Rowe · Full-Stack Web Developer · Portfolio and CV",
+    "description": "Full-stack web developer specializing in React JS, Ruby on Rails, and software localization. Previously: tech writer and translator for web apps from Alibaba Cloud, Huawei, and others. I like to build stuff that helps people be awesome at what they do.",
+    "image": "https://lionel-rowe.github.io/images/lionel.jpg",
+    "twitter_account": "",
+    "url": "https://lionel-rowe.github.io"
+  },
+
+  "fullName": "Lionel Rowe",
+  "tagline": "Full-Stack Web Developer",
+  "photo": {
+    "url": "images/lionel.jpg",
+    "alt": "Lionel Rowe mugshot",
+    "scale": 1
+  },
+  "ctaViewMyWork": "View my Work",
+  "skills": [
+    {
+      "desc": "React",
+      "icon": "fab react",
+      "color": "#00d1f7",
+      "url": "https://reactjs.org/"
+    },
+    {
+      "desc": "JavaScript",
+      "icon": "fab js",
+      "color": "#f0db4f",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    },
+    {
+      "desc": "HTML",
+      "icon": "fab html5",
+      "color": "#e44d25",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    },
+    {
+      "desc": "CSS",
+      "icon": "fab css3",
+      "color": "#264de4",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    },
+    {
+      "desc": "Node JS",
+      "icon": "fab node-js",
+      "color": "#83cc29",
+      "url": "https://nodejs.org/en/"
+    },
+    {
+      "desc": "Ruby",
+      "icon": "fas gem",
+      "color": "#ec1622",
+      "url": "https://www.ruby-lang.org/"
+    },
+    {
+      "desc": "Sass",
+      "icon": "fab sass",
+      "color": "#cc679a",
+      "url": "https://sass-lang.com/"
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Gestuno",
+      "img": "images/gestuno_cover_img.png",
+      "url": "https://www.gest.uno/",
+      "github": "https://github.com/gestuno/gestuno-rails",
+      "shortDesc": "{{Gestuno shortDesc}}",
+      "fullDesc": null,
+      "technologies": ["Rails", "Sass", "Twilio", "Stripe"]
+    },
+    {
+      "name": "Symbolika",
+      "img": "images/symbolika_screen_2.png",
+      "url": "https://chrome.google.com/webstore/detail/symbolika/llfbffepkepmcdakomdgenihlkaapoen",
+      "github": "https://github.com/lionel-rowe/symbolika",
+      "shortDesc": "{{Symbolika shortDesc}}",
+      "fullDesc": null,
+      "technologies": ["React", "ElasticLunr"]
+    },
+    {
+      "name": "Secret Gardens",
+      "img": null,
+      "url": "https://secret-gardens.herokuapp.com",
+      "github": "https://github.com/lionel-rowe/secret-gardens",
+      "shortDesc": "{{Secret Gardens shortDesc}}",
+      "fullDesc": null,
+      "technologies": ["Rails", "React", "Material UI"]
+    },
+    {
+      "name": "Mix-a-Lot",
+      "img": null,
+      "url": "http://mix-a-lot.herokuapp.com",
+      "github": "https://github.com/SebastienPoncelet/rails-mister-cocktail",
+      "shortDesc": "{{Mix-a-Lot shortDesc}}",
+      "fullDesc": null,
+      "technologies": ["Rails", "Bootstrap", "Sass"]
+    }
+  ],
+
+  "contactInfo": {}
+}
