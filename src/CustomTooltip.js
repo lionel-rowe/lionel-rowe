@@ -1,10 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { withStyles, Tooltip } from '@material-ui/core';
-
-import detectMobileBrowser from './detectMobileBrowser.js';
-
-const customScrollbarsUsed = !detectMobileBrowser();
+import { Tooltip } from '@material-ui/core';
 
 const CustomTooltip = props => {
 

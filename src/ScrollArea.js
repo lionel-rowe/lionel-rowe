@@ -8,6 +8,8 @@ import { globalHistory } from '@reach/router';
 
 import detectMobileBrowser from './detectMobileBrowser.js';
 
+import reflowOnMobileZoom from './reflowOnMobileZoom.js';
+
 const isMobile = detectMobileBrowser();
 
 const styles = theme => {
@@ -63,6 +65,12 @@ class ScrollArea extends React.Component {
 
   componentDidMount() {
     // `globalHistory.listen` returns a function that removes the listener
+
+    if (isMobile) {
+      // reflowOnMobileZoom(this.scrollbarRef.current);
+      reflowOnMobileZoom(document.body);
+    }
+
     const removeHistoryListener = globalHistory.listen(({ location, action }) => {
       //regadless of whether `action` is "PUSH" (nav to new location) or "POP" (back button)
       const interval = setInterval(() => {
@@ -116,6 +124,7 @@ class ScrollArea extends React.Component {
       />
     ) : (
       <div
+        ref={this.scrollbarRef}
         className={[classes.notSoCustomScrollbars, classes.scrollArea].join(' ')}
         {...passThroughProps}
       />

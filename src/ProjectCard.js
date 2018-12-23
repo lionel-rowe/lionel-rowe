@@ -29,8 +29,8 @@ const fallbackImg = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAA
 function ProjectCard(props) {
 
   const { classes } = props;
-  const { projectId, //TODO
-    img, name, url, github, shortDesc, fullDesc, technologies } = props;
+  const { /*projectId, fullDesc, technologies, */ //TODO
+    img, name, url, github, shortDesc } = props;
 
   const showPanel = () => {}; //TODO
 
