@@ -95,22 +95,22 @@
       "technologies": ["React", "ElasticLunr"]
     },
     {
-      "name": "Secret Gardens",
-      "img": null,
-      "url": "https://secret-gardens.herokuapp.com",
-      "github": "https://github.com/lionel-rowe/secret-gardens",
-      "shortDesc": "{{Secret Gardens shortDesc}}",
-      "fullDesc": null,
-      "technologies": ["Rails", "React", "Material UI"]
-    },
-    {
       "name": "Mix-a-Lot",
-      "img": null,
+      "img": "images/mix-a-lot_cover_img.png",
       "url": "http://mix-a-lot.herokuapp.com",
       "github": "https://github.com/SebastienPoncelet/rails-mister-cocktail",
       "shortDesc": "{{Mix-a-Lot shortDesc}}",
       "fullDesc": null,
       "technologies": ["Rails", "Bootstrap", "Sass"]
+    },
+    {
+      "name": "Secret Gardens",
+      "img": "images/secret-gardens_cover_img.png",
+      "url": "https://secret-gardens.herokuapp.com",
+      "github": "https://github.com/lionel-rowe/secret-gardens",
+      "shortDesc": "{{Secret Gardens shortDesc}}",
+      "fullDesc": null,
+      "technologies": ["Rails", "React", "Material UI"]
     }
   ],
 

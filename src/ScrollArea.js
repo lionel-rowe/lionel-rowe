@@ -68,7 +68,7 @@ class ScrollArea extends React.Component {
 
     if (isMobile) {
       // reflowOnMobileZoom(this.scrollbarRef.current);
-      reflowOnMobileZoom(document.body);
+      reflowOnMobileZoom(document.querySelector('#foreground'));
     }
 
     const removeHistoryListener = globalHistory.listen(({ location, action }) => {
