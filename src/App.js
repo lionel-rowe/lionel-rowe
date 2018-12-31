@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.scss';
 
-import TopNav from './TopNav.js';
-import Main from './Main.js';
-import BottomBar from './BottomBar.js';
+import TopNav from './TopNav';
+import Main from './Main';
+import BottomBar from './BottomBar';
 
 const App = props => {
   return (

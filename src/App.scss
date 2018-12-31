@@ -63,7 +63,7 @@ div.mugshot-container {
   flex-wrap: wrap;
 }
 
-.skill-icon {
+.badge {
   position: relative;
   height: 120px;
   flex: 0 0 2.5em;
@@ -75,7 +75,7 @@ div.mugshot-container {
   padding: 30px;
 }
 
-.skill-icon-inner {
+.badge-inner {
   transition: all $animation-speed;
   position: absolute;
   left: 50%;

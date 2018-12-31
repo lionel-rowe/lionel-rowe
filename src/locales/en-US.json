@@ -32,43 +32,43 @@
   "ctaViewMyWork": "View my Work",
   "skills": [
     {
-      "desc": "React",
+      "title": "React",
       "icon": "fab react",
       "color": "#00d1f7",
       "url": "https://reactjs.org/"
     },
     {
-      "desc": "JavaScript",
+      "title": "JavaScript",
       "icon": "fab js",
       "color": "#f0db4f",
       "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
     },
     {
-      "desc": "HTML",
+      "title": "HTML",
       "icon": "fab html5",
       "color": "#e44d25",
       "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
     },
     {
-      "desc": "CSS",
+      "title": "CSS",
       "icon": "fab css3",
       "color": "#264de4",
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
     },
     {
-      "desc": "Node JS",
+      "title": "Node JS",
       "icon": "fab node-js",
       "color": "#83cc29",
       "url": "https://nodejs.org/en/"
     },
     {
-      "desc": "Ruby",
+      "title": "Ruby",
       "icon": "fas gem",
       "color": "#ec1622",
       "url": "https://www.ruby-lang.org/"
     },
     {
-      "desc": "Sass",
+      "title": "Sass",
       "icon": "fab sass",
       "color": "#cc679a",
       "url": "https://sass-lang.com/"
@@ -114,5 +114,12 @@
     }
   ],
 
-  "contactInfo": {}
+  "contactInfo": {
+    "github": "https://github.com/lionel-rowe/",
+    "weixin": {
+      "qr": "https://u.wechat.com/EIPMEIYU6ZH1qGom9e6w2Vc",
+      "account": "lionel-rowe"
+    },
+    "linkedin": "https://www.linkedin.com/in/lionel-rowe/"
+  }
 }

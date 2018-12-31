@@ -6,9 +6,9 @@ import { withStyles } from '@material-ui/core';
 
 import { globalHistory } from '@reach/router';
 
-import detectMobileBrowser from './detectMobileBrowser.js';
+import detectMobileBrowser from './detectMobileBrowser';
 
-import reflowOnMobileZoom from './reflowOnMobileZoom.js';
+import reflowOnMobileZoom from './reflowOnMobileZoom';
 
 const isMobile = detectMobileBrowser();
 
