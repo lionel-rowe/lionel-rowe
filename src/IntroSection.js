@@ -3,8 +3,8 @@ import { withNamespaces } from 'react-i18next';
 
 import { Link } from '@reach/router';
 
-import Mugshot from './Mugshot.js';
-import CtaButton from './CtaButton.js';
+import Mugshot from './Mugshot';
+import CtaButton from './CtaButton';
 
 import { Grid, Typography } from '@material-ui/core';
 

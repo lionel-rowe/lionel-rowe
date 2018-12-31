@@ -5,7 +5,9 @@ import { TextField } from '@material-ui/core';
 import { withNamespaces } from 'react-i18next';
 import { Typography } from '@material-ui/core';
 
-import CtaButton from './CtaButton.js';
+import CtaButton from './CtaButton';
+import Badge from './Badge';
+import BadgeHoverQr from './BadgeHoverQr';
 
 const ContactSection = props => {
 
@@ -13,8 +15,29 @@ const ContactSection = props => {
 
   return (
     <section>
-
       <Typography variant='h1'>{t('ui.contact')}</Typography>
+
+      <Badge data={{
+        icon: 'fab github',
+        title: 'Github',
+        url: t('contactInfo.github'),
+        color: '#302f2f'
+      }} />
+      <BadgeHoverQr
+        data={{
+          icon: 'fab weixin',
+          title: 'WeChat',
+          qr: t('contactInfo.weixin.qr'),
+          account: t('contactInfo.weixin.account'),
+          color: '#00d00d',
+        }}
+      />
+      <Badge data={{
+        icon: 'fab linkedin',
+        title: 'LinkedIn',
+        url: t('contactInfo.linkedin'),
+        color: '#0273b2'
+      }} />
 
       <form action='' method='post'>
 
@@ -26,7 +49,6 @@ const ContactSection = props => {
           autoComplete='email'
           fullWidth
           margin='normal'
-          autoFocus={true}
         />
 
         <TextField

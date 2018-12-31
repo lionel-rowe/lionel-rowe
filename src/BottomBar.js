@@ -9,6 +9,7 @@ import { withNamespaces } from 'react-i18next';
 
 const styles = theme => ({
   root: {
+    zIndex: 1000,
     width: '100%',
     position: 'fixed',
     bottom: 0

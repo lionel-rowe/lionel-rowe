@@ -2,7 +2,7 @@ import React from 'react';
 
 import { withNamespaces } from 'react-i18next';
 
-import ProjectCard from './ProjectCard.js';
+import ProjectCard from './ProjectCard';
 
 import { Grid, Typography } from '@material-ui/core';
 

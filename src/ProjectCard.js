@@ -3,22 +3,27 @@ import { withStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const aspectRatio = [1200, 700];
-const scale = 0.33;
-const [width, height] = aspectRatio.map(el => el * scale);
+const [width, height] = [1200, 700];
+const largeScale = 0.5;
+const smallScale = 0.3;
+// const [width, height] = aspectRatio.map(el => el * scale);
 
 const styles = theme => ({
   card: {
-    flex: `0 1 ${width}px`,
+    flex: `0 1 ${width * largeScale}px`,
     margin: '0 20px 50px 20px',
     [theme.breakpoints.down('xs')]: {
+      flex: `0 1 ${width * smallScale}px`,
       margin: '0 0 50px 0'
     }
   },
   media: {
     // backgroundPosition: '0 0', //top left
     backgroundPositionY: 0, //top
-    height: height
+    height: `${height * largeScale}px`,
+    [theme.breakpoints.down('xs')]: {
+      height: `${height * smallScale}px`
+    }
   }
 });
 
@@ -29,15 +34,16 @@ const fallbackImg = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAA
 function ProjectCard(props) {
 
   const { classes } = props;
-  const { projectId, //TODO
-    img, name, url, github, shortDesc, fullDesc, technologies } = props;
+  const { /*projectId, fullDesc, technologies, */ //TODO
+    img, name, url, github, shortDesc } = props;
 
   const showPanel = () => {}; //TODO
 
   return (
     <Card className={classes.card}>
       <CardActionArea
-        onClick={() => showPanel()}
+        // onClick={() => showPanel()}
+        target='_blank' href={url}
       >
         <CardMedia
           className={classes.media}
