@@ -6,6 +6,10 @@
     "skills": "技能",
     "contact": "联系方式",
 
+    "weixin": "微信",
+    "linkedin": "领英",
+    "github": "GitHub",
+
     "email": {
       "yourEmail": "您的邮箱",
       "subject": "标题",

@@ -6,6 +6,10 @@
     "skills": "Skills",
     "contact": "Contact",
 
+    "weixin": "WeChat",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+
     "email": {
       "yourEmail": "Your email address",
       "subject": "Subject",
