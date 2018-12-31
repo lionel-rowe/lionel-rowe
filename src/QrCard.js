@@ -24,7 +24,7 @@ const QrCard = props => {
   return (
     <Card
       className={classes.root}
-      elevation={24}
+      elevation={16}
       style={{
         zIndex: 1000
       }}

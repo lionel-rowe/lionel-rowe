@@ -1,9 +1,9 @@
 import pinch from 'touch-pinch';
 
-VisualViewport.onresize = e => {
-  e.preventDefault();
-  console.log(e);
-}
+// VisualViewport.onresize = e => {
+//   e.preventDefault();
+//   console.log(e);
+// }
 
 const reflowOnMobileZoom = (el, minZoom = 0.6, maxZoom = 2, cssProp = 'zoom') => {
 

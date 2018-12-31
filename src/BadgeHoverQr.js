@@ -7,6 +7,10 @@ import { withStyles } from '@material-ui/core';
 import QRCode from 'qrcode';
 import uuidv4 from 'uuid/v4';
 
+import detectMobileBrowser from './detectMobileBrowser';
+
+const isMobile = detectMobileBrowser();
+
 const styles = theme => ({
   // typography: {
   //   margin: theme.spacing.unit * 2,
@@ -45,7 +49,7 @@ class BadgeHoverQr extends React.Component {
       <div
         style={{ display: 'inline-block', position: 'relative' }}
         onMouseLeave={this.handleDeactivate}
-        onBlur={this.handleDeactivate}
+        onBlur={() => !isMobile && this.handleDeactivate()}
       >
         <Badge
           styles={{
