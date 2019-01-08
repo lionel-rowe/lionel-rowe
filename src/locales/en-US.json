@@ -1,5 +1,7 @@
 {
   "ui": {
+    "loading": "Loading…",
+
     "about": "About",
     "home": "Home",
     "work": "Work",
