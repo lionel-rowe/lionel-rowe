@@ -22,15 +22,13 @@ const ContactSection = props => {
         url: t('contactInfo.github'),
         color: '#302f2f'
       }} />
-      <BadgeHoverQr
-        data={{
-          icon: 'fab weixin',
-          title: t('ui.weixin'),
-          qr: t('contactInfo.weixin.qr'),
-          account: t('contactInfo.weixin.account'),
-          color: '#00d00d',
-        }}
-      />
+      <BadgeHoverQr data={{
+        icon: 'fab weixin',
+        title: t('ui.weixin'),
+        qr: t('contactInfo.weixin.qr'),
+        account: t('contactInfo.weixin.account'),
+        color: '#00d00d',
+      }} />
       <Badge data={{
         icon: 'fab linkedin',
         title: t('ui.linkedin'),
