@@ -6,6 +6,7 @@
     "home": "Home",
     "work": "Work",
     "skills": "Skills",
+    "cv": "Résumé",
     "contact": "Contact",
 
     "weixin": "WeChat",
@@ -18,7 +19,8 @@
       "yourEmail": "Your email address",
       "subject": "Subject",
       "body": "Body",
-      "send": "Send"
+      "send": "Send",
+      "reset": "Clear"
     }
   },
 

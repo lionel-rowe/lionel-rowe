@@ -2,7 +2,6 @@ import React from 'react';
 
 import Badge from './Badge';
 import QrCard from './QrCard';
-import { withStyles } from '@material-ui/core';
 
 import QRCode from 'qrcode';
 import uuidv4 from 'uuid/v4';
@@ -11,17 +10,10 @@ import detectMobileBrowser from './detectMobileBrowser';
 
 const isMobile = detectMobileBrowser();
 
-const styles = theme => ({
-  // typography: {
-  //   margin: theme.spacing.unit * 2,
-  // },
-});
-
 class BadgeHoverQr extends React.Component {
 
   state = {
     open: false,
-    managedActive: false,
     id: `qr-${uuidv4()}`,
     qrSvg: '',
     deactivate: false
@@ -39,8 +31,8 @@ class BadgeHoverQr extends React.Component {
 
   render() {
 
-    const { classes, data, passThroughProps } = this.props;
-    const { open, id, managedActive } = this.state;
+    const { data, passThroughProps } = this.props;
+    const { open, id } = this.state;
 
     const { qr, account, ...passThroughData } = data;
     const title = data.title; //still pass through
@@ -77,4 +69,4 @@ class BadgeHoverQr extends React.Component {
 
 }
 
-export default withStyles(styles)(BadgeHoverQr);
+export default BadgeHoverQr;

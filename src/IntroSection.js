@@ -4,7 +4,7 @@ import { withNamespaces } from 'react-i18next';
 import { Link } from '@reach/router';
 
 import Mugshot from './Mugshot';
-import CtaButton from './CtaButton';
+import { CtaButton } from './Buttons';
 
 import { Grid, Typography } from '@material-ui/core';
 
