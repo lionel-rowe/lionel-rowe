@@ -34,16 +34,18 @@ class EmailContactForm extends React.Component {
     return window.localStorage[`${PREFIX}.${key}`] || '';
   }
 
-  clearLocalStorage = () => {
+  clearSubjectAndBodyFromLocalStorage = () => {
+    ['subject', 'body'].forEach(key => {
+      window.localStorage.removeItem(`${PREFIX}.${key}`);
+    });
+  };
+
+  clearContactFormInfo = () => {
     Object.keys(window.localStorage).forEach(key => {
       if (key.slice(0, PREFIX.length + 1) === `${PREFIX}.`) {
         window.localStorage.removeItem(key);
       }
     });
-  };
-
-  clearContactFormInfo = () => {
-    this.clearLocalStorage();
 
     this.setState(this.initState());
   };
@@ -95,7 +97,7 @@ class EmailContactForm extends React.Component {
         <CtaButton
           text={t('ui.email.send')}
           type='submit'
-          onClick={this.clearLocalStorage} // followed by default, i.e. `POST` form
+          onClick={this.clearSubjectAndBodyFromLocalStorage} // followed by default, i.e. `POST` form
         />
 
         <CancelButton
