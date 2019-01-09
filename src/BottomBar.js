@@ -5,6 +5,8 @@ import { Link, Location } from '@reach/router';
 import { withStyles, BottomNavigation, BottomNavigationAction } from '@material-ui/core';
 import { ArtTrack, PermContactCalendar, Home, QuestionAnswer } from '@material-ui/icons';
 
+import { AddCircle } from '@material-ui/icons';
+
 import { withNamespaces } from 'react-i18next';
 
 const styles = theme => ({
@@ -49,8 +51,8 @@ const BottomBar = props => {
           >
             <BottomNavigationAction value='/'  to='/' label={t('ui.home')} icon={<Home />} {...commonActionButtonProps} />
             <BottomNavigationAction value='/work' to='/work' label={t('ui.work')} icon={<ArtTrack />} {...commonActionButtonProps} />
-            {/*<BottomNavigationAction value='/skills' to='/skills' label={t('ui.skills')} icon={<AddCircle />} {...commonActionButtonProps} />*/}
-            <BottomNavigationAction value='/cv' to='/cv' label={t('ui.cv')} icon={<PermContactCalendar />} {...commonActionButtonProps} />
+            <BottomNavigationAction value='/skills' to='/skills' label={t('ui.skills')} icon={<AddCircle />} {...commonActionButtonProps} />
+            {/*<BottomNavigationAction value='/cv' to='/cv' label={t('ui.cv')} icon={<PermContactCalendar />} {...commonActionButtonProps} />*/}
             <BottomNavigationAction value='/contact' to='/contact' label={t('ui.contact')} icon={<QuestionAnswer />} {...commonActionButtonProps} />
           </BottomNavigation>
         );

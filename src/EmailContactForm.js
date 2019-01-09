@@ -34,26 +34,31 @@ class EmailContactForm extends React.Component {
     return window.localStorage[`${PREFIX}.${key}`] || '';
   }
 
-  clearContactFormInfo = () => {
+  clearLocalStorage = () => {
     Object.keys(window.localStorage).forEach(key => {
       if (key.slice(0, PREFIX.length + 1) === `${PREFIX}.`) {
         window.localStorage.removeItem(key);
       }
     });
+  };
+
+  clearContactFormInfo = () => {
+    this.clearLocalStorage();
 
     this.setState(this.initState());
-  }
+  };
 
   render() {
 
     const { t } = this.props;
 
     return (
-      <form action='' method='post'>
+      <form action='https://formspree.io/portfolio@qiangzhongyizhuan.33mail.com' method='POST' id='emailForm'>
 
         <TextField
+          required
           id='email'
-          name='email'
+          name='_replyto'
           label={t('ui.email.yourEmail')}
           type='email'
           autoComplete='email'
@@ -74,6 +79,7 @@ class EmailContactForm extends React.Component {
         />
 
         <TextField
+          required
           id='body'
           name='body'
           label={t('ui.email.body')}
@@ -86,9 +92,17 @@ class EmailContactForm extends React.Component {
           onChange={e => this.setContactFormInfo('body', e.currentTarget.value)}
         />
 
-        <CtaButton text={t('ui.email.send')} type='submit' />
+        <CtaButton
+          text={t('ui.email.send')}
+          type='submit'
+          onClick={this.clearLocalStorage} // followed by default, i.e. `POST` form
+        />
 
-        <CancelButton text={t('ui.email.reset')} type='reset' onClick={this.clearContactFormInfo} />
+        <CancelButton
+          text={t('ui.email.reset')}
+          type='reset'
+          onClick={this.clearContactFormInfo}
+        />
 
       </form>
     );
