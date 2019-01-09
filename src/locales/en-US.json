@@ -12,6 +12,8 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
 
+    "ctaViewMyWork": "View my Work",
+
     "email": {
       "yourEmail": "Your email address",
       "subject": "Subject",
@@ -35,7 +37,6 @@
     "alt": "Lionel Rowe mugshot",
     "scale": 1
   },
-  "ctaViewMyWork": "View my Work",
   "skills": [
     {
       "title": "React",

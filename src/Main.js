@@ -2,10 +2,9 @@ import React from 'react';
 
 import { Router } from '@reach/router';
 
-import { Grid } from '@material-ui/core';
-
 import ScrollArea from './ScrollArea';
-import Spinner from './Spinner';
+import GridContainer from './GridContainer';
+import SectionSpinner from './SectionSpinner';
 
 const IntroSection = React.lazy(() => import('./IntroSection'));
 const WorkSection = React.lazy(() => import('./WorkSection'));
@@ -15,20 +14,13 @@ const ContactSection = React.lazy(() => import('./ContactSection'));
 export default function() {
   return (
     <ScrollArea>
-      <React.Suspense fallback={<Spinner />}>
-        <Grid
-          container
-          direction='row'
-          justify='center'
-          alignItems='center'
-          style={{padding: '0 20px'}}
-          component={props => <Router {...props} component='main' />}
-        >
+      <React.Suspense fallback={<SectionSpinner />}>
+        <GridContainer component={Router}>
           <IntroSection path='/' />
           <WorkSection path='/work' />
           <SkillsSection path='/skills' />
           <ContactSection path='/contact' />
-        </Grid>
+        </GridContainer>
       </React.Suspense>
     </ScrollArea>
   );

@@ -55,7 +55,10 @@ class Badge extends Component {
       >
         <li
           className='badge'
-          style={{position: 'relative'}}
+          style={{
+            position: 'relative',
+            padding: shouldExpand ? 30 : 0
+          }}
           onMouseEnter={() => this.setActive(true)}
           onMouseLeave={() => {
             if (!this.hasLinkRefFocus() && !shouldManageDeactivate) {

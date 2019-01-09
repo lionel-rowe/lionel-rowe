@@ -19,7 +19,7 @@ const IntroSection = props => {
       <Mugshot path={t('photo.url')} alt={t('photo.alt')} scale={t('photo.scale')} />
       <Typography variant='body1'>{t('missionStatement')}</Typography>
 
-      <CtaButton text={t('ctaViewMyWork')} component={Link} to='/work' />
+      <CtaButton text={t('ui.ctaViewMyWork')} component={Link} to='/work' />
     </Grid>
   );
 }

@@ -7,9 +7,10 @@ import { AccountCircle } from '@material-ui/icons';
 const styles = theme => ({
   root: {
     position: 'absolute',
-    top: '70%',
-    left: 10,
-    right: 10,
+    top: '75%',
+    width: 120,
+    left: '50%',
+    transform: 'translateX(-50%)',
     padding: theme.spacing.unit * 2
   },
   typography: {
