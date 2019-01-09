@@ -6,6 +6,7 @@
     "home": "首页",
     "work": "事业",
     "skills": "技能",
+    "cv": "简历",
     "contact": "联系方式",
 
     "weixin": "微信",
@@ -18,7 +19,8 @@
       "yourEmail": "您的邮箱",
       "subject": "标题",
       "body": "内容",
-      "send": "发送"
+      "send": "发送",
+      "reset": "清空"
     }
   },
 

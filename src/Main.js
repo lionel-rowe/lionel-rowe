@@ -10,6 +10,9 @@ const IntroSection = React.lazy(() => import('./IntroSection'));
 const WorkSection = React.lazy(() => import('./WorkSection'));
 const SkillsSection = React.lazy(() => import('./SkillsSection'));
 const ContactSection = React.lazy(() => import('./ContactSection'));
+const StandaloneSpinner = React.lazy(() => import('./StandaloneSpinner'));
+
+const CvViewer = React.lazy(() => import('./CvViewer'));
 
 export default function() {
   return (
@@ -20,6 +23,8 @@ export default function() {
           <WorkSection path='/work' />
           <SkillsSection path='/skills' />
           <ContactSection path='/contact' />
+          <CvViewer path='/cv' />
+          <StandaloneSpinner path='/spinner' />
         </GridContainer>
       </React.Suspense>
     </ScrollArea>

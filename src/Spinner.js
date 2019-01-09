@@ -9,9 +9,6 @@ const styles = theme => ({
     width: 120,
     height: 120,
   },
-  outer: {
-    animation: '1s spin infinite linear'
-  },
   inner: {
     position: 'absolute',
     left: '50%',
@@ -28,30 +25,50 @@ const styles = theme => ({
   }
 });
 
-const Spinner = props => {
+const SPEEDS = [ 1, .5, .25, .125 ];
 
-  const { t, classes, scale, padding } = props;
+class Spinner extends React.Component {
 
-  return (
-    <div style={{
-      padding: padding
-    }}>
-      <div className={classes.container} style={{
-        zoom: scale && `${Math.ceil(scale * 100)}%`
+  state = {
+    speedIndex: 0
+  };
+
+  handleClick = e => {
+    this.setState({ speedIndex: (this.state.speedIndex + 1) % SPEEDS.length });
+  };
+
+  render() {
+
+    const { t, classes, scale, padding } = this.props;
+
+    return (
+      <div style={{
+        padding: padding
       }}>
-        <img
-          src='images/fidget_outer.png' //https://pixabay.com/en/fidget-spinner-grey-stress-relax-2430786/
-          alt={t('ui.loading')}
-          className={classes.outer}
-        />
-        <img
-          src='images/fidget_inner.png'
-          alt=''
-          className={classes.inner}
-        />
+        <div
+          className={classes.container}
+          style={{
+            zoom: scale && `${Math.ceil(scale * 100)}%`,
+            margin: '0 auto',
+          }}
+          onClick={e => this.handleClick(e)}
+        >
+          <img
+            src='images/fidget_outer.png' //https://pixabay.com/en/fidget-spinner-grey-stress-relax-2430786/
+            alt={t('ui.loading')}
+            style={{
+              animation: `${SPEEDS[this.state.speedIndex]}s spin infinite linear`
+            }}
+          />
+          <img
+            src='images/fidget_inner.png'
+            alt=''
+            className={classes.inner}
+          />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default withNamespaces('translations')(withStyles(styles)(Spinner));
