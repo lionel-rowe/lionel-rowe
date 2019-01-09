@@ -88,8 +88,8 @@ class TopNav extends React.Component {
               open={!!anchorEl}
               onClose={this.handleMenuClose}
             >
-              <MenuItem onClick={() => this.changeLanguage('en-US')}>English (US)</MenuItem>
-              <MenuItem onClick={() => this.changeLanguage('zh-CN')}>简体中文</MenuItem>
+              <MenuItem onClick={() => this.changeLanguage('en-US')}>English</MenuItem>
+              <MenuItem onClick={() => this.changeLanguage('zh-CN')}>中文</MenuItem>
             </Menu>
           </div>
 

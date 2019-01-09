@@ -1,10 +1,18 @@
 {
   "ui": {
+    "loading": "加载中…",
+
     "about": "关于我",
     "home": "首页",
     "work": "事业",
     "skills": "技能",
     "contact": "联系方式",
+
+    "weixin": "微信",
+    "linkedin": "领英",
+    "github": "GitHub",
+
+    "ctaViewMyWork": "观看我的工作",
 
     "email": {
       "yourEmail": "您的邮箱",

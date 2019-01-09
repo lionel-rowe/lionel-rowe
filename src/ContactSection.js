@@ -19,14 +19,14 @@ const ContactSection = props => {
 
       <Badge data={{
         icon: 'fab github',
-        title: 'Github',
+        title: t('ui.github'),
         url: t('contactInfo.github'),
         color: '#302f2f'
       }} />
       <BadgeHoverQr
         data={{
           icon: 'fab weixin',
-          title: 'WeChat',
+          title: t('ui.weixin'),
           qr: t('contactInfo.weixin.qr'),
           account: t('contactInfo.weixin.account'),
           color: '#00d00d',
@@ -34,7 +34,7 @@ const ContactSection = props => {
       />
       <Badge data={{
         icon: 'fab linkedin',
-        title: 'LinkedIn',
+        title: t('ui.linkedin'),
         url: t('contactInfo.linkedin'),
         color: '#0273b2'
       }} />

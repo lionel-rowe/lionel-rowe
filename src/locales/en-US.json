@@ -1,10 +1,18 @@
 {
   "ui": {
+    "loading": "Loading…",
+
     "about": "About",
     "home": "Home",
     "work": "Work",
     "skills": "Skills",
     "contact": "Contact",
+
+    "weixin": "WeChat",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+
+    "ctaViewMyWork": "View my Work",
 
     "email": {
       "yourEmail": "Your email address",
@@ -29,7 +37,6 @@
     "alt": "Lionel Rowe mugshot",
     "scale": 1
   },
-  "ctaViewMyWork": "View my Work",
   "skills": [
     {
       "title": "React",
