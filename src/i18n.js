@@ -1,4 +1,7 @@
 import i18n from 'i18next';
+
+import { reactI18nextModule } from "react-i18next";
+
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import zhCN from './locales/zh-CN.json';
@@ -18,42 +21,63 @@ Object.keys(locales).forEach(key => {
   }
 });
 
-i18n.use(LanguageDetector).init({
-  // we init with resources
-  resources: {
-    'en-US': {
-      translations: locales.enUS
+i18n
+  .use(reactI18nextModule) // because `I18nextProvider` doesn't play nicely with every component
+  .use(LanguageDetector)
+  .init({
+    // we init with resources
+    resources: {
+      'en-US': {
+        translations: locales.enUS
+      },
+      'zh-CN': {
+        translations: locales.zhCN
+      }
     },
-    'zh-CN': {
-      translations: locales.zhCN
+
+    fallbackLng: {
+        'en': ['en-US'],
+        'en-GB': ['en-US'],
+        'zh': ['zh-CN', 'en-US'],
+        'zh-HANS': ['zh-CN', 'en-US'],
+        'zh-HANT': ['zh-CN', 'en-US'],
+        'default': ['en-US']
+    },
+
+    debug: false, //switch back to true for automatic logging
+
+    // have a common namespace used around the full app
+    ns: ['translations'],
+    defaultNS: 'translations',
+
+    keySeparator: '.', // we use content as keys
+
+    interpolation: {
+      escapeValue: false, // not needed for react!!
+      formatSeparator: ','
+    },
+
+    react: {
+      wait: true
     }
-  },
-
-  fallbackLng: {
-      'en': ['en-US'],
-      'en-GB': ['en-US'],
-      'zh': ['zh-CN', 'en-US'],
-      'zh-HANS': ['zh-CN', 'en-US'],
-      'zh-HANT': ['zh-CN', 'en-US'],
-      'default': ['en-US']
-  },
-
-  debug: false, //switch back to true for automatic logging
-
-  // have a common namespace used around the full app
-  ns: ['translations'],
-  defaultNS: 'translations',
-
-  keySeparator: '.', // we use content as keys
-
-  interpolation: {
-    escapeValue: false, // not needed for react!!
-    formatSeparator: ','
-  },
-
-  react: {
-    wait: true
-  }
-});
+  });
 
 export default i18n;
+
+
+// import i18n from "i18next";
+
+// i18n
+//   .init({
+//   fallbackLng: "en",
+//   load: "languageOnly",
+//   ns: ["common"],
+//   defaultNS: "common",
+
+//   react: {
+//     wait: true,
+//     nsMode: "default"
+//   }
+// });
+
+// export default i18n;

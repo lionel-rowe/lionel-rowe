@@ -41,5 +41,4 @@ const ContactSection = props => {
   );
 }
 
-export default withNamespaces('translations')(ContactSection)
-
+export default withNamespaces('translations')(ContactSection);
