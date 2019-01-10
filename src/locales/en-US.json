@@ -2,6 +2,9 @@
   "ui": {
     "loading": "Loading…",
 
+    "notFound": "Sorry, there’s nothing to see here!",
+    "backToHome": "Home",
+
     "about": "About",
     "home": "Home",
     "work": "Work",

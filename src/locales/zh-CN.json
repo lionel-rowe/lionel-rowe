@@ -2,6 +2,9 @@
   "ui": {
     "loading": "加载中…",
 
+    "notFound": "这里一片空白~",
+    "backToHome": "返回首页",
+
     "about": "关于我",
     "home": "首页",
     "work": "事业",

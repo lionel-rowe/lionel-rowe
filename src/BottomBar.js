@@ -3,7 +3,7 @@ import React from 'react';
 import { Link, Location } from '@reach/router';
 
 import { withStyles, BottomNavigation, BottomNavigationAction } from '@material-ui/core';
-import { DeveloperBoard, PermContactCalendar, Home, QuestionAnswer, Gesture } from '@material-ui/icons';
+import { DeveloperBoard, Home, QuestionAnswer, Gesture } from '@material-ui/icons';
 
 import { withNamespaces } from 'react-i18next';
 
