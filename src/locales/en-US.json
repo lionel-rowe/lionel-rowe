@@ -92,6 +92,7 @@
       "name": "Gestuno",
       "img": "images/gestuno_cover_img.png",
       "url": "https://www.gest.uno/",
+      "url": "https://gestuno.herokuapp.com/",
       "github": "https://github.com/gestuno/gestuno-rails",
       "shortDesc": "{{Gestuno shortDesc}}",
       "fullDesc": null,
