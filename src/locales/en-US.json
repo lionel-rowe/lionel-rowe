@@ -133,7 +133,7 @@
     "secretGardens": {
       "name": "Secret Gardens",
       "img": "images/secret-gardens_cover_img.png",
-      "url": "https://secret-gardens.herokuapp.com",
+      "url": "https://my-secret-gardens.herokuapp.com",
       "github": "https://github.com/lionel-rowe/secret-gardens",
       "shortDesc": "Matching greenery-starved city dwellers with their ideal garden for hire",
       "fullDesc": "A full-stack React/Rails application matching greenery-starved city dwellers with their ideal garden for hire. Hosts can post their properties, and prospective customers can browse from among the available gardens.",
