@@ -26,8 +26,7 @@ class ScrollArea extends React.Component {
   state = {
     removeHistoryListener: () => null,
     interval1: -1,
-    interval2: -1,
-    timeout: -1
+    interval2: -1
   }
 
   componentDidMount() {
@@ -41,11 +40,7 @@ class ScrollArea extends React.Component {
         this.forceUpdate()
       , 100); // horrible hack #1, necessary due to https://github.com/facebook/react/issues/14536
 
-      const timeout = setTimeout(() => {
-        clearInterval(this.state.interval1);
-      }, 10000); // horrible hack #1.5, necessary due to horrible hack #1 - clears interval after page has loaded
-
-      this.setState({ interval1, timeout });
+      this.setState({ interval1 });
     }
 
     const removeHistoryListener = globalHistory.listen(({ location, action }) => {
@@ -82,7 +77,7 @@ class ScrollArea extends React.Component {
 
   componentWillUnmount() {
     this.state.removeHistoryListener();
-    [ 'interval1', 'interval2', 'timeout' ].forEach(interval => {
+    [ 'interval1', 'interval2' ].forEach(interval => {
       clearInterval(this.state[interval]);
     });
   }

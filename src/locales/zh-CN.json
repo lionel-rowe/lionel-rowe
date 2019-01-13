@@ -1,6 +1,17 @@
 {
+
+  "global": {
+    "colon": "："
+  },
+
   "ui": {
     "loading": "加载中…",
+    "close": "关闭",
+
+    "allSelected": "全部",
+    "selectAll": "全选",
+
+    "clearFilters": "取消筛选",
 
     "notFound": "这里一片空白~",
     "backToHome": "返回首页",
@@ -18,6 +29,9 @@
 
     "ctaViewMyWork": "观看我的工作",
 
+    "technologies": "技术",
+    "filterByTech": "按技术筛选",
+
     "email": {
       "yourEmail": "您的邮箱",
       "subject": "标题",
@@ -25,6 +39,7 @@
       "send": "发送",
       "reset": "清空"
     }
+
   },
 
   "meta": {
@@ -36,4 +51,5 @@
   "tagline": "全栈互联网开发",
   "history": [],
   "contactInfo": {}
+
 }

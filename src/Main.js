@@ -13,7 +13,7 @@ const ContactSection = React.lazy(() => import('./ContactSection'));
 const StandaloneSpinner = React.lazy(() => import('./StandaloneSpinner'));
 const NotFound = React.lazy(() => import('./NotFound'));
 
-const CvViewer = React.lazy(() => import('./CvViewer'));
+// const CvViewer = React.lazy(() => import('./CvViewer'));
 
 export default function() {
   return (
@@ -24,7 +24,7 @@ export default function() {
           <WorkSection path='/work' />
           <SkillsSection path='/skills' />
           <ContactSection path='/contact' />
-          <CvViewer path='/cv' />
+          {/*<CvViewer path='/cv' />*/}
           <StandaloneSpinner path='/spinner' />
           <NotFound default />
         </GridContainer>

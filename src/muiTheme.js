@@ -1,29 +1,47 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import { /*darken,*/ lighten } from '@material-ui/core/styles/colorManipulator';
 
 const [primaryColor, secondaryColor] = ['#222333', '#f50057'];
 const white = '#ffffff';
+
 
 const theme = createMuiTheme({
   palette: {
     primary: {
       main: primaryColor,
       gradient: `${primaryColor}, #550022`,
-      contrastText: white
+      contrastText: white,
     },
     secondary: {
-      main: '#f50057',
+      main: secondaryColor,
       gradient: `${secondaryColor}, #FF8E53`,
-      contrastText: white
+      contrastText: white,
+      extraLight: lighten(secondaryColor, 0.5)
     }
   },
   typography: {
     useNextVariants: true,
     h1: {
-      fontSize: '2em',
+      fontSize: '2rem',
       padding: '0.9em 0 0.5em 0',
       fontWeight: 500,
       color: '#654c55'
-    }
+    },
+    h2: {
+      fontSize: '1.7em',
+      padding: '0.9em 0 0.5em 0',
+      fontWeight: 500,
+    },
+    h3: {
+      fontSize: '1.5em',
+      padding: '0.9em 0 0.5em 0',
+      fontWeight: 500,
+    },
+    h4: {
+      fontSize: '1.25em',
+      padding: '0.9em 0 0.5em 0',
+      fontWeight: 500,
+    },
   }
 });
 

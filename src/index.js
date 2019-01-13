@@ -14,9 +14,9 @@ import 'typeface-roboto';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faGem, faLink } from '@fortawesome/free-solid-svg-icons'
+import { faGem, faLink, faCode } from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab, faLink, faGem);
+library.add(fab, faLink, faGem, faCode);
 
 ReactDOM.render(
   // <React.StrictMode>
