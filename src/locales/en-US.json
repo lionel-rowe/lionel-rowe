@@ -1,6 +1,19 @@
 {
+  "global": {
+    "colon": ": "
+  },
+
   "ui": {
     "loading": "Loading…",
+    "close": "Close",
+
+    "allSelected": "All",
+    "selectAll": "Select all",
+
+    "clearFilters": "Clear filters",
+
+    "notFound": "Sorry, there’s nothing to see here!",
+    "backToHome": "Home",
 
     "about": "About",
     "home": "Home",
@@ -15,6 +28,9 @@
 
     "ctaViewMyWork": "View my Work",
 
+    "technologies": "Technologies",
+    "filterByTech": "Filter by technology",
+
     "email": {
       "yourEmail": "Your email address",
       "subject": "Subject",
@@ -22,6 +38,7 @@
       "send": "Send",
       "reset": "Clear"
     }
+
   },
 
   "meta": {
@@ -84,44 +101,45 @@
     }
   ],
 
-  "projects": [
-    {
+  "projects": {
+    "gestuno": {
       "name": "Gestuno",
       "img": "images/gestuno_cover_img.png",
       "url": "https://www.gest.uno/",
+      "url": "https://gestuno.herokuapp.com/",
       "github": "https://github.com/gestuno/gestuno-rails",
-      "shortDesc": "{{Gestuno shortDesc}}",
-      "fullDesc": null,
-      "technologies": ["Rails", "Sass", "Twilio", "Stripe"]
+      "shortDesc": "Remote on-demand platform for deaf customers to engage interpreters",
+      "fullDesc": "Sign-language interpreters spend 1/3 of their time traveling, which drives up the cost and wait times for vital interpreting services. Gestuno provides a convenient, affordable, on-demand solution for deaf customers to engage the interpreters they need.\n\nUsers select from available interpreters based on languages, qualifications, and other criteria to get the services they need, anytime, anywhere. Interpreting is provided over a live video connection and charged by the minute, eliminating overheads.",
+      "technologies": ["Ruby on Rails", "Sass", "Twilio", "Stripe", "Web Workers"]
     },
-    {
+    "symbolika": {
       "name": "Symbolika",
       "img": "images/symbolika_screen_2.png",
       "url": "https://chrome.google.com/webstore/detail/symbolika/llfbffepkepmcdakomdgenihlkaapoen",
       "github": "https://github.com/lionel-rowe/symbolika",
-      "shortDesc": "{{Symbolika shortDesc}}",
-      "fullDesc": null,
-      "technologies": ["React", "ElasticLunr"]
+      "shortDesc": "Search for and insert special characters from within your browser",
+      "fullDesc": "A chrome extension allowing users to search for and insert over 28,000 unicode characters and emoji. Works with messaging apps, search engines, and more.\n\nDesign goals focused on initial load time and search speed, with a shared worker serving data from the front end.",
+      "technologies": ["Chrome API", "React", "ElasticLunr", "Web Workers"]
     },
-    {
+    "mixalot": {
       "name": "Mix-a-Lot",
       "img": "images/mix-a-lot_cover_img.png",
       "url": "http://mix-a-lot.herokuapp.com",
       "github": "https://github.com/SebastienPoncelet/rails-mister-cocktail",
-      "shortDesc": "{{Mix-a-Lot shortDesc}}",
-      "fullDesc": null,
-      "technologies": ["Rails", "Bootstrap", "Sass"]
+      "shortDesc": "Cocktails for the masses",
+      "fullDesc": "A full-stack rails app with a database of cocktail recipes. Users can search for a cocktail or get a random recommendation. User-generated content is also enabled, allowing users to upload their favorite cocktail recipes, ingredients, and images.",
+      "technologies": ["Ruby on Rails", "Bootstrap", "Sass"]
     },
-    {
+    "secretGardens": {
       "name": "Secret Gardens",
       "img": "images/secret-gardens_cover_img.png",
-      "url": "https://secret-gardens.herokuapp.com",
+      "url": "https://my-secret-gardens.herokuapp.com",
       "github": "https://github.com/lionel-rowe/secret-gardens",
-      "shortDesc": "{{Secret Gardens shortDesc}}",
-      "fullDesc": null,
-      "technologies": ["Rails", "React", "Material UI"]
+      "shortDesc": "Matching greenery-starved city dwellers with their ideal garden for hire",
+      "fullDesc": "A full-stack React/Rails application matching greenery-starved city dwellers with their ideal garden for hire. Hosts can post their properties, and prospective customers can browse from among the available gardens.",
+      "technologies": ["Ruby on Rails", "React", "Material UI"]
     }
-  ],
+  },
 
   "contactInfo": {
     "github": "https://github.com/lionel-rowe/",

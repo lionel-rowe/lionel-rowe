@@ -24,7 +24,9 @@ class ScrollArea extends React.Component {
   }
 
   state = {
-    removeHistoryListener: () => null
+    removeHistoryListener: () => null,
+    interval1: -1,
+    interval2: -1
   }
 
   componentDidMount() {
@@ -33,22 +35,32 @@ class ScrollArea extends React.Component {
     if (isMobile) {
       // reflowOnMobileZoom(this.scrollbarRef.current);
       reflowOnMobileZoom(document.querySelector('#foreground'));
+    } else {
+      const interval1 = setInterval(() =>
+        this.forceUpdate()
+      , 100); // horrible hack #1, necessary due to https://github.com/facebook/react/issues/14536
+
+      this.setState({ interval1 });
     }
 
     const removeHistoryListener = globalHistory.listen(({ location, action }) => {
       //regadless of whether `action` is "PUSH" (nav to new location) or "POP" (back button)
-      const interval = setInterval(() => {
-        // horrible hack, necessary due to:
+      const interval2 = setInterval(() => {
+        // horrible hack #2, necessary due to:
         // 1) scrollbars fail to rerender correctly when moving between routes if scroll-top is already 0
         // 2) setInterval with check on `globalHistory.transitioning` is necessary because globalHistory listener triggers before transition is complete
         if (isMobile) {
           window.scrollTo(0, 0);
-          clearInterval(interval);
+          clearInterval(interval2);
         } else if (!globalHistory.transitioning) {
           this.forceUpdate();
           this.scrollbarRef.current.scrollToTop();
-          clearInterval(interval);        }
-      }, 50);
+          clearInterval(interval2);
+          clearInterval(this.state.interval1);
+        }
+      }, 100);
+
+      this.setState({ interval2 });
     });
 
     this.setState({ removeHistoryListener });
@@ -64,7 +76,10 @@ class ScrollArea extends React.Component {
   }
 
   componentWillUnmount() {
-    this.removeHistoryListener();
+    this.state.removeHistoryListener();
+    [ 'interval1', 'interval2' ].forEach(interval => {
+      clearInterval(this.state[interval]);
+    });
   }
 
   render() {

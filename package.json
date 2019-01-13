@@ -141,5 +141,9 @@
     "sass-loader": "^7.1.0"
   },
   "homepage": "https://lionel-rowe.github.io",
-  "sideEffects": false
+  "sideEffects": [
+    "./src/i18n.js",
+    "*.css",
+    "*.scss"
+  ]
 }

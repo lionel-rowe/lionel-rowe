@@ -25,6 +25,22 @@ body {
   text-align: center;
 }
 
+// html { // per https://github.com/mui-org/material-ui/issues/6656
+//   overflow-x: hidden !important;
+//   overflow-y: scroll !important;
+// }
+
+// body, #root { // per https://github.com/mui-org/material-ui/issues/6656
+//   height: 100% !important;
+//   width: 100% !important;
+//   margin: 0 !important;
+//   padding: 0 !important;
+// }
+
+// nav { // per https://github.com/mui-org/material-ui/issues/6656
+//   padding: 0 !important;
+// }
+
 // h1 {
 //   color: $main-heading-color;
 //   margin: 20px 0 0 0;

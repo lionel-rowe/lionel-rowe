@@ -53,9 +53,10 @@ class Badge extends Component {
           ...(styles && styles.a)
         }}
       >
-        <li
+        <div
           className='badge'
           style={{
+            width: shouldExpand ? null : '1em',
             position: 'relative',
             padding: shouldExpand ? 30 : 0
           }}
@@ -94,7 +95,7 @@ class Badge extends Component {
 
           </CustomTooltip>
           <span className='sr-only'>{data.title}</span> {/* also `grep`able! */}
-        </li>
+        </div>
       </a>
     );
   }

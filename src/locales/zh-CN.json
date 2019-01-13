@@ -1,19 +1,36 @@
 {
+
+  "global": {
+    "colon": "："
+  },
+
   "ui": {
     "loading": "加载中…",
+    "close": "关闭",
+
+    "allSelected": "全部",
+    "selectAll": "全选",
+
+    "clearFilters": "取消筛选",
+
+    "notFound": "这里一片空白~",
+    "backToHome": "返回首页",
 
     "about": "关于我",
     "home": "首页",
     "work": "事业",
     "skills": "技能",
     "cv": "简历",
-    "contact": "联系方式",
+    "contact": "联系",
 
     "weixin": "微信",
     "linkedin": "领英",
     "github": "GitHub",
 
     "ctaViewMyWork": "观看我的工作",
+
+    "technologies": "技术",
+    "filterByTech": "按技术筛选",
 
     "email": {
       "yourEmail": "您的邮箱",
@@ -22,6 +39,7 @@
       "send": "发送",
       "reset": "清空"
     }
+
   },
 
   "meta": {
@@ -33,4 +51,5 @@
   "tagline": "全栈互联网开发",
   "history": [],
   "contactInfo": {}
+
 }

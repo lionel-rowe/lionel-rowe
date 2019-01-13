@@ -1,11 +1,10 @@
 import React from 'react';
 import { withStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import getProjectImgDimensions from './getProjectImgDimensions';
 
-const [width, height] = [1200, 700];
-const largeScale = 0.5;
-const smallScale = 0.3;
+const { width, height, largeScale, smallScale } = getProjectImgDimensions;
+
 // const [width, height] = aspectRatio.map(el => el * scale);
 
 const styles = theme => ({
@@ -33,17 +32,14 @@ const fallbackImg = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAA
 
 function ProjectCard(props) {
 
-  const { classes } = props;
-  const { /*projectId, fullDesc, technologies, */ //TODO
-    img, name, url, github, shortDesc } = props;
-
-  const showPanel = () => {}; //TODO
+  const { classes, showPanel } = props;
+  const { img, name, shortDesc } = props;
 
   return (
     <Card className={classes.card}>
       <CardActionArea
-        // onClick={() => showPanel()}
-        target='_blank' href={url}
+        onClick={showPanel}
+        // target='_blank' href={url}
       >
         <CardMedia
           className={classes.media}
@@ -64,27 +60,13 @@ function ProjectCard(props) {
 
         </CardContent>
       </CardActionArea>
-      <CardActions style={{
+{/*      <CardActions style={{
         // justifyContent: 'center'
       }}>
 
-        {
-          url ? (
-            <Button target='_blank' href={url}>
-              <FontAwesomeIcon icon={['fas', 'link']} />
-            </Button>
-          ) : null
-        }
 
-        {
-          github ? (
-            <Button target='_blank' href={github}>
-              <FontAwesomeIcon icon={['fab', 'github']} />
-            </Button>
-          ) : null
-        }
 
-      </CardActions>
+      </CardActions>*/}
     </Card>
   );
 }

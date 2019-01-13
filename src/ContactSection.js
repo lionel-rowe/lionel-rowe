@@ -16,32 +16,35 @@ const ContactSection = props => {
     <section>
       <Typography variant='h1'>{t('ui.contact')}</Typography>
 
-      <Badge data={{
-        icon: 'fab github',
-        title: t('ui.github'),
-        url: t('contactInfo.github'),
-        color: '#302f2f'
-      }} />
-      <BadgeHoverQr
-        data={{
+      <div style={{
+        margin: '0 auto',
+        display: 'flex',
+        justifyContent: 'space-around'
+      }}>
+        <Badge data={{
+          icon: 'fab github',
+          title: t('ui.github'),
+          url: t('contactInfo.github'),
+          color: '#302f2f'
+        }} />
+        <BadgeHoverQr data={{
           icon: 'fab weixin',
           title: t('ui.weixin'),
           qr: t('contactInfo.weixin.qr'),
           account: t('contactInfo.weixin.account'),
           color: '#00d00d',
-        }}
-      />
-      <Badge data={{
-        icon: 'fab linkedin',
-        title: t('ui.linkedin'),
-        url: t('contactInfo.linkedin'),
-        color: '#0273b2'
-      }} />
+        }} />
+        <Badge data={{
+          icon: 'fab linkedin',
+          title: t('ui.linkedin'),
+          url: t('contactInfo.linkedin'),
+          color: '#0273b2'
+        }} />
+      </div>
 
       <EmailContactForm />
     </section>
   );
 }
 
-export default withNamespaces('translations')(ContactSection)
-
+export default withNamespaces('translations')(ContactSection);
