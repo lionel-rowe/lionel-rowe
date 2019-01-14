@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
+import { withStyles, Card, CardActionArea, CardContent, CardMedia, Typography } from '@material-ui/core';
 
 import getProjectImgDimensions from './getProjectImgDimensions';
 

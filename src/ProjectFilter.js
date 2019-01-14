@@ -22,25 +22,27 @@ const FILTER_BUTTON_WIDTH = 48;
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
-const filterSelectorHeight = ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP;
-const filterSelectorWidth = 300;
+const FILTER_SELECTOR_HEIGHT = ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP;
+const FILTER_SELECTOR_WIDTH = 300;
 
 
 const styles = theme => ({
   container: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    maxWidth: FILTER_SELECTOR_WIDTH,
+    margin: '0 auto'
   },
 
   // scrollbars: {
-  //   minHeight: filterSelectorHeight - 20,
-  //   minWidth: filterSelectorWidth
+  //   minHeight: FILTER_SELECTOR_HEIGHT - 20,
+  //   minWidth: FILTER_SELECTOR_WIDTH
   // },
 
   formControl: {
     margin: theme.spacing.unit,
-    width: filterSelectorWidth,
+    flex: '0 1 100%',
     textAlign: 'left'
   },
 
@@ -52,29 +54,34 @@ const styles = theme => ({
 const ProjectFilter = props => {
   const { t, classes, technologyFilters, technologies, fullOrEmpty } = props;
 
+  const joinify = listItems => listItems.join(t('global.listItemDelimiter'));
+
+  const values = fullOrEmpty ? [] : technologyFilters;
+
   const MenuProps = {
     PaperProps: {
       style: {
-        maxHeight: filterSelectorHeight,
+        maxHeight: FILTER_SELECTOR_HEIGHT,
         width: 250,
-        marginTop: ITEM_HEIGHT
+        marginTop: ITEM_HEIGHT /*
+          * (1 + (fullOrEmpty ? 0 : technologies.length))
+        */
       },
     },
   };
 
   return (
     <div className={classes.container}>
-      <FormControl className={classes.formControl} style={{
-        marginLeft: fullOrEmpty ? 0 : FILTER_BUTTON_WIDTH
-      }}>
+      <FormControl className={classes.formControl}>
         <InputLabel htmlFor="select-multiple-checkbox">{t('ui.filterByTech')}</InputLabel>
         <Select
           multiple
-          value={fullOrEmpty ? [] : technologyFilters}
+          value={values}
           onChange={props.handleChange}
           input={<Input id="select-multiple-checkbox" />}
-          renderValue={selected => selected.join(', ')}
+          renderValue={joinify}
           MenuProps={MenuProps}
+          title={joinify(values)}
         >
 {/*          <ScrollArea className={classes.scrollbars}>*/}
             {technologies.map(tech => (

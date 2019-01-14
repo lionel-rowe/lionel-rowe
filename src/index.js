@@ -16,6 +16,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faGem, faLink, faCode } from '@fortawesome/free-solid-svg-icons'
 
+false && console.log(i18n);
+
 library.add(fab, faLink, faGem, faCode);
 
 ReactDOM.render(

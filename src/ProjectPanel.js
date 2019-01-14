@@ -3,18 +3,11 @@ import React from 'react';
 import { withNamespaces } from 'react-i18next';
 
 import { withStyles, Drawer, Typography,
-  Icon, IconButton, Button } from '@material-ui/core';
+  IconButton, Button } from '@material-ui/core';
 
 import { Close } from '@material-ui/icons/';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { Scrollbars } from 'react-custom-scrollbars';
-
-import detectMobileBrowser from './detectMobileBrowser';
-
-const isMobile = detectMobileBrowser();
-// const isMobile = true;
 
 const styles = theme => {
   const colorTransition = { transition: 'all 0.15s' };
@@ -23,14 +16,6 @@ const styles = theme => {
   const ghLinkWidth = '2.5rem';
 
   return {
-    scrollbars: {
-      minHeight: '100vh',
-      minWidth: relWidth,
-      [`@media screen and (min-width: ${absWidth}px)`]: {
-         minWidth: absWidth
-      }
-    },
-
     closeButton: {
       borderRadius: 0,
       height: '2em',
@@ -117,24 +102,35 @@ const styles = theme => {
   };
 };
 
-const ScrollArea = props => {
-  const { className, ...classlessProps } = props;
+const openInNewTab = url => ({
+  href: url,
+  target: '_blank',
+  rel: 'noopener noreferrer'
+});
 
-  return !isMobile ? <Scrollbars {...props} /> : <React.Fragment {...classlessProps} />
-};
+class ProjectPanel extends React.Component {
 
-const ProjectPanel = props => {
-  const { t, classes, project = {}, hideSelf, open } = props;
+  componentDidUpdate() {
+    //prevent double scrollbars
+    document.querySelector('html').style.setProperty(
+      'overflow-y',
+      this.props.open ? 'hidden' : 'scroll',
+      'important'
+    );
+  }
 
-  const { fullDesc, technologies = [], img, name, url, github } = project;
+  render() {
 
-  return (
-    <Drawer
-      anchor='right'
-      open={open}
-      onClose={hideSelf}
-    >
-      <ScrollArea className={classes.scrollbars}>
+    const { t, classes, project = {}, hideSelf, open } = this.props;
+
+    const { fullDesc, technologies = [], img, name, url, github } = project;
+
+    return (
+      <Drawer
+        anchor='right'
+        open={open}
+        onClose={hideSelf}
+      >
         <IconButton
           className={classes.closeButton}
           aria-label={t('ui.close')}
@@ -144,7 +140,7 @@ const ProjectPanel = props => {
         </IconButton>
         <div className={classes.projectDiv}>
           <div className={classes.imgContainer}>
-            <a target='_blank' href={url}>
+            <a {...openInNewTab(url)}>
               <img
                 src={img}
                 alt={`Screenshot of ${name} project`}
@@ -156,7 +152,10 @@ const ProjectPanel = props => {
             <Typography variant='h2' className={classes.heading}>
               {
                 url ? (
-                  <a className={classes.link} target='_blank' href={url}>
+                  <a
+                    className={classes.link}
+                    {...openInNewTab(url)}
+                  >
                     {name}
                   </a>
                 ) : {name}
@@ -164,7 +163,10 @@ const ProjectPanel = props => {
               {' '}
               {
                 github ? (
-                  <Button className={classes.ghLink} target='_blank' href={github}>
+                  <Button
+                    className={classes.ghLink}
+                    {...openInNewTab(github)}
+                  >
                     <FontAwesomeIcon icon={['fas', 'code']} />
                   </Button>
                 ) : null
@@ -182,9 +184,9 @@ const ProjectPanel = props => {
             </Typography>
           </div>
         </div>
-      </ScrollArea>
-    </Drawer>
-  );
+      </Drawer>
+    );
+  }
 };
 
 export default withNamespaces('translations')(withStyles(styles)(ProjectPanel));
