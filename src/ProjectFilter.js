@@ -59,15 +59,22 @@ const ProjectFilter = props => {
   const values = fullOrEmpty ? [] : technologyFilters;
 
   const MenuProps = {
+  // https://github.com/mui-org/material-ui/issues/12208#issuecomment-406820537
+    anchorOrigin: {
+      vertical: "bottom",
+      horizontal: "left"
+    },
+    transformOrigin: {
+      vertical: "top",
+      horizontal: "left"
+    },
+    getContentAnchorEl: null,
     PaperProps: {
       style: {
         maxHeight: FILTER_SELECTOR_HEIGHT,
-        width: 250,
-        marginTop: ITEM_HEIGHT /*
-          * (1 + (fullOrEmpty ? 0 : technologies.length))
-        */
-      },
-    },
+        width: FILTER_SELECTOR_WIDTH - 18
+      }
+    }
   };
 
   return (
