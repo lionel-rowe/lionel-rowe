@@ -12,10 +12,12 @@ const [ CtaButton, CancelButton ] = [
 
   props => { // CtaButton
 
-    const { text, classes, ...passThroughProps } = props;
+    const { text, classes, shiny, oversized, ...passThroughProps } = props;
+
+    console.log()
 
     return (
-      <Button variant='contained' color='secondary' className={classes.root} {...passThroughProps}>
+      <Button variant='contained' color='secondary' className={classes.root + (shiny ? ' shinyButton' : '')} {...passThroughProps}>
         {text}
       </Button>
     );

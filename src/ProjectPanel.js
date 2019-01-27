@@ -9,6 +9,10 @@ import { Close } from '@material-ui/icons/';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import detectMobileBrowser from './detectMobileBrowser';
+
+const isMobile = detectMobileBrowser();
+
 const SCROLLBAR_WIDTH = 10;
 
 const colorTransition = { transition: 'all 0.15s' };
@@ -119,21 +123,25 @@ class ProjectPanel extends React.Component {
 
     document.querySelector('html').style.setProperty(
       'overflow-y',
-      this.props.open ? 'hidden' : 'scroll',
+      this.props.open ? 'hidden' : 'auto',
       'important'
     );
 
-    document.querySelector('html').style.setProperty(
-      'padding-right',
-      this.props.open ? `${SCROLLBAR_WIDTH}px` : '0px',
-      'important'
-    );
+    if (!isMobile) {
 
-    document.querySelectorAll('nav')[0].style.setProperty( //top nav
-      'padding-right',
-      this.props.open ? `${SCROLLBAR_WIDTH}px` : '0px',
-      'important'
-    );
+      document.querySelector('html').style.setProperty(
+        'padding-right',
+        this.props.open ? `${SCROLLBAR_WIDTH}px` : '0px',
+        'important'
+      );
+
+      document.querySelectorAll('nav')[0].style.setProperty( //top nav
+        'padding-right',
+        this.props.open ? `${SCROLLBAR_WIDTH}px` : '0px',
+        'important'
+      );
+
+    }
 
   }
 

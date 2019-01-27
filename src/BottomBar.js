@@ -16,6 +16,7 @@ const styles = theme => ({
   },
   actionButton: {
     minWidth: 50,
+    maxWidth: 250,
     '&$selected': {
       color: theme.palette.secondary.main
     }
@@ -49,7 +50,7 @@ const BottomBar = props => {
           >
             <BottomNavigationAction value='/'  to='/' label={t('ui.home')} icon={<Home />} {...commonActionButtonProps} />
             <BottomNavigationAction value='/work' to='/work' label={t('ui.work')} icon={<DeveloperBoard />} {...commonActionButtonProps} />
-            <BottomNavigationAction value='/skills' to='/skills' label={t('ui.skills')} icon={<Gesture />} {...commonActionButtonProps} />
+            {/*<BottomNavigationAction value='/skills' to='/skills' label={t('ui.skills')} icon={<Gesture />} {...commonActionButtonProps} />*/}
             {/*<BottomNavigationAction value='/cv' to='/cv' label={t('ui.cv')} icon={<PermContactCalendar />} {...commonActionButtonProps} />*/}
             <BottomNavigationAction value='/contact' to='/contact' label={t('ui.contact')} icon={<QuestionAnswer />} {...commonActionButtonProps} />
           </BottomNavigation>
