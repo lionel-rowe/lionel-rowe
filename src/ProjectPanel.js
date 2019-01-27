@@ -32,18 +32,7 @@ const styles = theme => {
       },
       zIndex: 2000,
       top: 0,
-      right: SCROLLBAR_WIDTH,
-      // transition: 'right 0.15s'
-      animation: '0.15s flyFromRight'
-    },
-
-    '@keyframes flyFromRight': {
-      from: {
-        right: 0 - absWidth
-      },
-      to: {
-        transform: SCROLLBAR_WIDTH
-      }
+      right: 0,
     },
 
     projectDiv: {
@@ -61,7 +50,7 @@ const styles = theme => {
     },
 
     paddedContent: {
-      padding: '0 10px',
+      padding: '0 30px',
       maxWidth: absWidth,
       boxSizing: 'border-box'
     },
