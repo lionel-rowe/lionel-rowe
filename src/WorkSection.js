@@ -2,6 +2,7 @@ import React from 'react';
 
 import { withNamespaces } from 'react-i18next';
 
+import Title from './Title';
 import ProjectCard from './ProjectCard';
 import ProjectPanel from './ProjectPanel';
 import ProjectFilter from './ProjectFilter';
@@ -58,43 +59,45 @@ class WorkSection extends React.Component {
     const filtersFullOrEmpty = (uniqueTechnologies.length === technologyFilters.length) || !technologyFilters.length;
 
     return (
-      <section style={{width: '100%'}}>
-        <ProjectPanel
-          open={this.state.projectIsOpen}
-          project={this.state.lastProjectOpened}
-          hideSelf={() => this.hidePanel()}
-        />
-        <Typography variant='h1'>{t('ui.work')}</Typography>
-        <ProjectFilter
-          technologies={uniqueTechnologies}
-          technologyFilters={technologyFilters}
-          fullOrEmpty={filtersFullOrEmpty}
-          clearFilters={this.clearFilters}
-          handleChange={this.handleFilterChange}
-        />
-        <Grid
-          container
-          direction='row'
-          justify='space-evenly'
-          style={{padding: 0}}
-        >
-          {Object.keys(projects).reduce((projs, key) => {
-            const project = projects[key];
+      <Title i18nKey='ui.work'>
+        <section style={{width: '100%'}}>
+          <ProjectPanel
+            open={this.state.projectIsOpen}
+            project={this.state.lastProjectOpened}
+            hideSelf={() => this.hidePanel()}
+          />
+          <Typography variant='h1'>{t('ui.work')}</Typography>
+          <ProjectFilter
+            technologies={uniqueTechnologies}
+            technologyFilters={technologyFilters}
+            fullOrEmpty={filtersFullOrEmpty}
+            clearFilters={this.clearFilters}
+            handleChange={this.handleFilterChange}
+          />
+          <Grid
+            container
+            direction='row'
+            justify='space-evenly'
+            style={{padding: 0}}
+          >
+            {Object.keys(projects).reduce((projs, key) => {
+              const project = projects[key];
 
-            if (filtersFullOrEmpty || project.technologies.some(tech => technologyFilters.includes(tech))) {
-              projs.push(
-                <ProjectCard
-                  key={key}
-                  // id={key}
-                  showPanel={() => this.showPanel(project)}
-                  {...project}
-                />
-              );
-            }
-            return projs;
-          }, [])}
-        </Grid>
-      </section>
+              if (filtersFullOrEmpty || project.technologies.some(tech => technologyFilters.includes(tech))) {
+                projs.push(
+                  <ProjectCard
+                    key={key}
+                    // id={key}
+                    showPanel={() => this.showPanel(project)}
+                    {...project}
+                  />
+                );
+              }
+              return projs;
+            }, [])}
+          </Grid>
+        </section>
+      </Title>
     );
   }
 }

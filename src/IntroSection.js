@@ -3,6 +3,7 @@ import { withNamespaces } from 'react-i18next';
 
 import { Link } from '@reach/router';
 
+import Title from './Title';
 import Mugshot from './Mugshot';
 import { CtaButton } from './Buttons';
 
@@ -13,14 +14,17 @@ const IntroSection = props => {
   const { t } = props;
 
   return (
-    <Grid item xs={12} sm={10} md={10} lg={8} xl={6} component='section'>
-      <Typography variant='h1'>{[t('fullName'), t('tagline')].join(' — ')}</Typography>
+    <Title i18nKey='ui.home'>
 
-      <Mugshot path={t('photo.url')} alt={t('photo.alt')} scale={t('photo.scale')} />
-      <Typography variant='body1'>{t('missionStatement')}</Typography>
+      <Grid item xs={12} sm={10} md={10} lg={8} xl={6} component='section'>
+        <Typography variant='h1'>{[t('fullName'), t('tagline')].join(' — ')}</Typography>
 
-      <CtaButton shiny={true} text={t('ui.ctaViewMyWork')} component={Link} to='/work' />
-    </Grid>
+        <Mugshot path={t('photo.url')} alt={t('photo.alt')} scale={t('photo.scale')} />
+        <Typography variant='body1'>{t('missionStatement')}</Typography>
+
+        <CtaButton shiny={true} text={t('ui.ctaViewMyWork')} component={Link} to='/work' />
+      </Grid>
+    </Title>
   );
 }
 

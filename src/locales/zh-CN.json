@@ -1,10 +1,12 @@
 {
   "global": {
     "listItemDelimiter": "、",
-    "colon": "："
+    "colon": "：",
+    "titleDelimiter": " :: "
   },
 
   "ui": {
+    "title": "罗宁",
     "loading": "加载中…",
     "close": "关闭",
 
@@ -43,7 +45,7 @@
   },
 
   "meta": {
-    "title": "罗宁 · 全栈互联网开发 · 简历",
+    "title": "罗宁 :: 全栈互联网开发",
     "description": "全栈互联网开发，致力于 React JS、Ruby on Rails、软件本土化。之前：阿里云、华为等 web app 技术写作、本土化。目标：造出能够让用户成为最牛的自己的工具！"
   },
 

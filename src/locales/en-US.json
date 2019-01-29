@@ -1,10 +1,12 @@
 {
   "global": {
     "listItemDelimiter": ", ",
-    "colon": ": "
+    "colon": ": ",
+    "titleDelimiter": " :: "
   },
 
   "ui": {
+    "title": "Lionel Rowe",
     "loading": "Loading…",
     "close": "Close",
 
@@ -18,7 +20,7 @@
 
     "about": "About",
     "home": "Home",
-    "work": "Work",
+    "work": "Portfolio",
     "skills": "Skills",
     "cv": "Résumé",
     "contact": "Contact",
@@ -43,7 +45,7 @@
   },
 
   "meta": {
-    "title": "Lionel Rowe · Full-Stack Web Developer · Portfolio and CV",
+    "title": "Lionel Rowe :: Full-Stack Web Developer",
     "description": "Full-stack web developer specializing in React JS, Ruby on Rails, and software localization. Previously: tech writer and translator for web apps from Alibaba Cloud, Huawei, and others. I like to build stuff that helps people be awesome at what they do.",
     "image": "https://lionel-rowe.github.io/images/lionel.jpg",
     "twitter_account": "",

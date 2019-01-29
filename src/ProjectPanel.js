@@ -84,15 +84,17 @@ const styles = theme => {
     listItem: {
       listStyleType: 'none',
       display: 'inline-block',
-      '&:not(:last-child)::after': {
-        content: '""',
+      '&:not(:first-child)::before': {
+        top: '0.03em',
+        color: theme.palette.secondary.main,
+        margin: '0 0.2em',
+        content: '"•"',
         display: 'inline-block',
-        width: '0.5em',
-        height: '0.5em',
-        background: theme.palette.secondary.main,
+        fontWeight: 'bold',
+        position: 'relative',
+        fontSize: '2em',
+        lineHeight: '0.2em',
         verticalAlign: 'middle',
-        margin: '0 0.5em',
-        borderRadius: '50%'
       }
     },
 
