@@ -32,7 +32,7 @@ class BadgeHoverQr extends React.Component {
   render() {
 
     const { data, passThroughProps } = this.props;
-    const { open, id } = this.state;
+    const { open, id, qrSvg } = this.state;
 
     const { qr, account, ...passThroughData } = data;
     const title = data.title; //still pass through
@@ -60,7 +60,7 @@ class BadgeHoverQr extends React.Component {
         />
 
         <QrCard
-          qr={this.state.qrSvg}
+          qr={qrSvg}
           {...{title, open, id, account}}
         />
       </div>

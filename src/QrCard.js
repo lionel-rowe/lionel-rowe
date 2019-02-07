@@ -27,6 +27,7 @@ const QrCard = props => {
       className={classes.root}
       elevation={16}
       style={{
+        marginTop: '1rem',
         zIndex: 1000
       }}
       hidden={!open}
