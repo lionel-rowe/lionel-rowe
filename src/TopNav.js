@@ -27,14 +27,6 @@ class TopNav extends React.Component {
     anchorEl: null
   };
 
-  refreshMetadata() {
-    document.title = this.props.t('meta.title');
-  }
-
-  componentDidMount() {
-    this.refreshMetadata();
-  }
-
   handleMenuOpen = (e) => {
     this.setState({ anchorEl: e.currentTarget });
   };
@@ -46,7 +38,6 @@ class TopNav extends React.Component {
   changeLanguage = (lng) => {
     this.props.i18n.changeLanguage(lng);
     this.handleMenuClose();
-    this.refreshMetadata();
   };
 
   render() {

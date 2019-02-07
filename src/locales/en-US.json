@@ -1,9 +1,12 @@
 {
   "global": {
-    "colon": ": "
+    "listItemDelimiter": ", ",
+    "colon": ": ",
+    "titleDelimiter": " :: "
   },
 
   "ui": {
+    "title": "Lionel Rowe",
     "loading": "Loading…",
     "close": "Close",
 
@@ -17,7 +20,7 @@
 
     "about": "About",
     "home": "Home",
-    "work": "Work",
+    "work": "Portfolio",
     "skills": "Skills",
     "cv": "Résumé",
     "contact": "Contact",
@@ -42,11 +45,11 @@
   },
 
   "meta": {
-    "title": "Lionel Rowe · Full-Stack Web Developer · Portfolio and CV",
+    "title": "Lionel Rowe :: Full-Stack Web Developer",
     "description": "Full-stack web developer specializing in React JS, Ruby on Rails, and software localization. Previously: tech writer and translator for web apps from Alibaba Cloud, Huawei, and others. I like to build stuff that helps people be awesome at what they do.",
     "image": "https://lionel-rowe.github.io/images/lionel.jpg",
     "twitter_account": "",
-    "url": "https://lionel-rowe.github.io"
+    "url": "https://www.lionelrowe.com"
   },
 
   "fullName": "Lionel Rowe",
@@ -82,7 +85,7 @@
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
     },
     {
-      "title": "Node JS",
+      "title": "Node.js",
       "icon": "fab node-js",
       "color": "#83cc29",
       "url": "https://nodejs.org/en/"
@@ -121,6 +124,15 @@
       "fullDesc": "A chrome extension allowing users to search for and insert over 28,000 unicode characters and emoji. Works with messaging apps, search engines, and more.\n\nDesign goals focused on initial load time and search speed, with a shared worker serving data from the front end.",
       "technologies": ["Chrome API", "React", "ElasticLunr", "Web Workers"]
     },
+    "b64": {
+      "name": "b64",
+      "img": "images/b64_cover_img.png",
+      "url": "https://b64.glitch.me",
+      "github": "https://github.com/lionel-rowe/b64",
+      "shortDesc": "Unicode (UTF-8) ⇔ Base64 converter",
+      "fullDesc": "JavaScript’s native implementation of Base64 encoding and decoding fails for characters outside the Latin 1 range. This experimental project allows for Base64 encoding of arbitrary Unicode strings, using the popular UTF-8 encoding.\n\nThe web front-end is an experiment in progressive enhancement, providing a modern web-app experience for most users, while still allowing full functionality via the back end even if JavaScript is disabled.",
+      "technologies": ["Node.js", "Express", "Handlebars", "Progressive Enhancement"]
+    },
     "mixalot": {
       "name": "Mix-a-Lot",
       "img": "images/mix-a-lot_cover_img.png",
@@ -129,6 +141,15 @@
       "shortDesc": "Cocktails for the masses",
       "fullDesc": "A full-stack rails app with a database of cocktail recipes. Users can search for a cocktail or get a random recommendation. User-generated content is also enabled, allowing users to upload their favorite cocktail recipes, ingredients, and images.",
       "technologies": ["Ruby on Rails", "Bootstrap", "Sass"]
+    },
+    "gol": {
+      "name": "Game of Life",
+      "img": "images/GoL_cover_img.png",
+      "url": "https://lionel-rowe.github.io/GoL/",
+      "github": "https://github.com/lionel-rowe/GoL",
+      "shortDesc": "Implementation of John Conway’s famous cellular automaton",
+      "fullDesc": "A performant, browser-based implementation of Conway’s Game of Life. This implementation includes a parser for RLE files, allowing players to upload and run their favorite patterns. Players can also draw patterns on the canvas using the mouse.",
+      "technologies": ["Bootstrap", "RLE"]
     },
     "secretGardens": {
       "name": "Secret Gardens",

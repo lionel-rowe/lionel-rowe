@@ -56,7 +56,8 @@ class Badge extends Component {
         <div
           className='badge'
           style={{
-            width: shouldExpand ? null : '1em',
+            width: shouldExpand ? null : '1.5em',
+            height: shouldExpand ? null : '1.5em',
             position: 'relative',
             padding: shouldExpand ? 30 : 0
           }}

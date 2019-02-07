@@ -3,47 +3,40 @@ import React from 'react';
 import { withNamespaces } from 'react-i18next';
 
 import { withStyles, Drawer, Typography,
-  Icon, IconButton, Button } from '@material-ui/core';
+  IconButton, Button } from '@material-ui/core';
 
 import { Close } from '@material-ui/icons/';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Scrollbars } from 'react-custom-scrollbars';
-
 import detectMobileBrowser from './detectMobileBrowser';
 
 const isMobile = detectMobileBrowser();
-// const isMobile = true;
+
+const SCROLLBAR_WIDTH = 10;
+
+const colorTransition = { transition: 'all 0.15s' };
+const absWidth = 700;
+const relWidth = '100vw';
+const ghLinkWidth = '2.5rem';
 
 const styles = theme => {
-  const colorTransition = { transition: 'all 0.15s' };
-  const absWidth = 700;
-  const relWidth = '100vw';
-  const ghLinkWidth = '2.5rem';
-
   return {
-    scrollbars: {
-      minHeight: '100vh',
-      minWidth: relWidth,
-      [`@media screen and (min-width: ${absWidth}px)`]: {
-         minWidth: absWidth
-      }
-    },
-
     closeButton: {
       borderRadius: 0,
       height: '2em',
       width: '2em',
       position: 'fixed',
-      right: 0,
       background: 'rgba(0, 0, 0, 0.3)',
       color: 'rgba(255, 255, 255, 0.8)',
       ...colorTransition,
       '&:hover': {
         background: theme.palette.primary.main,
         color: theme.palette.secondary.main
-      }
+      },
+      zIndex: 2000,
+      top: 0,
+      right: 0,
     },
 
     projectDiv: {
@@ -61,7 +54,7 @@ const styles = theme => {
     },
 
     paddedContent: {
-      padding: '0 10px',
+      padding: '0 30px',
       maxWidth: absWidth,
       boxSizing: 'border-box'
     },
@@ -91,15 +84,17 @@ const styles = theme => {
     listItem: {
       listStyleType: 'none',
       display: 'inline-block',
-      '&:not(:last-child)::after': {
-        content: '""',
+      '&:not(:first-child)::before': {
+        top: '0.03em',
+        color: theme.palette.secondary.main,
+        margin: '0 0.2em',
+        content: '"•"',
         display: 'inline-block',
-        width: '0.5em',
-        height: '0.5em',
-        background: theme.palette.secondary.main,
+        fontWeight: 'bold',
+        position: 'relative',
+        fontSize: '2em',
+        lineHeight: '0.2em',
         verticalAlign: 'middle',
-        margin: '0 0.5em',
-        borderRadius: '50%'
       }
     },
 
@@ -117,74 +112,122 @@ const styles = theme => {
   };
 };
 
-const ScrollArea = props => {
-  const { className, ...classlessProps } = props;
+const openInNewTab = url => ({
+  href: url,
+  target: '_blank',
+  rel: 'noopener noreferrer'
+});
 
-  return !isMobile ? <Scrollbars {...props} /> : <React.Fragment {...classlessProps} />
-};
+class ProjectPanel extends React.Component {
 
-const ProjectPanel = props => {
-  const { t, classes, project = {}, hideSelf, open } = props;
+  componentDidUpdate() {
+    //prevent double scrollbars
 
-  const { fullDesc, technologies = [], img, name, url, github } = project;
+    document.querySelector('html').style.setProperty(
+      'overflow-y',
+      this.props.open ? 'hidden' : 'auto',
+      'important'
+    );
 
-  return (
-    <Drawer
-      anchor='right'
-      open={open}
-      onClose={hideSelf}
-    >
-      <ScrollArea className={classes.scrollbars}>
-        <IconButton
-          className={classes.closeButton}
-          aria-label={t('ui.close')}
-          onClick={hideSelf}
+    if (!isMobile) {
+
+      document.querySelector('html').style.setProperty(
+        'padding-right',
+        this.props.open ? `${SCROLLBAR_WIDTH}px` : '0px',
+        'important'
+      );
+
+      document.querySelectorAll('nav')[0].style.setProperty( //top nav
+        'padding-right',
+        this.props.open ? `${SCROLLBAR_WIDTH}px` : '0px',
+        'important'
+      );
+
+    }
+
+  }
+
+  render() {
+
+    const { t, classes, project = {}, hideSelf, open } = this.props;
+
+    const { fullDesc, technologies = [], img, name, url, github } = project;
+
+    return (
+
+      <React.Fragment>
+        {
+          open && (
+            <IconButton
+              className={classes.closeButton}
+              aria-label={t('ui.close')}
+              onClick={hideSelf}
+              style={{
+                // display: open ? 'block' : 'none'
+                // right: open ? SCROLLBAR_WIDTH : 0 - absWidth
+              }}
+            >
+              <Close />
+            </IconButton>
+          )
+        }
+
+        <Drawer
+          anchor='right'
+          open={open}
+          onClose={hideSelf}
         >
-          <Close />
-        </IconButton>
-        <div className={classes.projectDiv}>
-          <div className={classes.imgContainer}>
-            <a target='_blank' href={url}>
-              <img
-                src={img}
-                alt={`Screenshot of ${name} project`}
-                className={classes.projectImg}
-              />
-            </a>
+          <div className={classes.projectDiv}>
+            <div className={classes.imgContainer}>
+              <a {...openInNewTab(url)}>
+                <img
+                  src={img}
+                  alt={`Screenshot of ${name} project`}
+                  className={classes.projectImg}
+                />
+              </a>
+            </div>
+            <div className={classes.paddedContent}>
+              <Typography variant='h2' className={classes.heading}>
+                {
+                  url ? (
+                    <a
+                      className={classes.link}
+                      {...openInNewTab(url)}
+                    >
+                      {name}
+                    </a>
+                  ) : {name}
+                }
+                {' '}
+                {
+                  github ? (
+                    <Button
+                      className={classes.ghLink}
+                      {...openInNewTab(github)}
+                    >
+                      <FontAwesomeIcon icon={['fas', 'code']} />
+                    </Button>
+                  ) : null
+                }
+              </Typography>
+              <Typography variant='body1' component='ul' className={classes.techList}>
+                {
+                  technologies.map((technology, idx) => (
+                      <li key={idx} className={classes.listItem}>{technology}</li>
+                  ))
+                }
+              </Typography>
+              <Typography variant='body2' component='div' className={classes.bodyText}>
+                {fullDesc && fullDesc.split(/[\r\n]+/).map((para, idx) => (<p key={idx}>{para}</p>))}
+              </Typography>
+            </div>
           </div>
-          <div className={classes.paddedContent}>
-            <Typography variant='h2' className={classes.heading}>
-              {
-                url ? (
-                  <a className={classes.link} target='_blank' href={url}>
-                    {name}
-                  </a>
-                ) : {name}
-              }
-              {' '}
-              {
-                github ? (
-                  <Button className={classes.ghLink} target='_blank' href={github}>
-                    <FontAwesomeIcon icon={['fas', 'code']} />
-                  </Button>
-                ) : null
-              }
-            </Typography>
-            <Typography variant='body1' component='ul' className={classes.techList}>
-              {
-                technologies.map((technology, idx) => (
-                    <li key={idx} className={classes.listItem}>{technology}</li>
-                ))
-              }
-            </Typography>
-            <Typography variant='body2' component='div' className={classes.bodyText}>
-              {fullDesc && fullDesc.split(/[\r\n]+/).map((para, idx) => (<p key={idx}>{para}</p>))}
-            </Typography>
-          </div>
-        </div>
-      </ScrollArea>
-    </Drawer>
-  );
+        </Drawer>
+      </React.Fragment>
+
+    );
+  }
 };
 
 export default withNamespaces('translations')(withStyles(styles)(ProjectPanel));
