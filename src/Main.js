@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Router } from '@reach/router';
+import { Router, Redirect } from '@reach/router';
 
 import ScrollArea from './ScrollArea';
 import GridContainer from './GridContainer';
@@ -21,7 +21,12 @@ export default function() {
       <React.Suspense fallback={<SectionSpinner />}>
         <GridContainer component={Router}>
           <IntroSection path='/' />
-          <WorkSection path='/work' />
+          <WorkSection path='/portfolio' />
+          <Redirect
+            noThrow /*https://github.com/reach/router/issues/100#issuecomment-415424987*/
+            from='/work'
+            to='/portfolio'
+          />
           {/*<SkillsSection path='/skills' />*/}
           <ContactSection path='/contact' />
           {/*<CvViewer path='/cv' />*/}

@@ -9,8 +9,6 @@ class Title extends React.Component {
     if (!nextProps || this.props.lng !== nextProps.lng) {
       document.title = `${t('ui.title')}${t('global.titleDelimiter')}${t(i18nKey)}`;
     }
-
-    console.log(this.props.lng, nextProps && nextProps.lng);
   }
 
   componentDidMount = () => this.setTitle();

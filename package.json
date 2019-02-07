@@ -139,7 +139,7 @@
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0"
   },
-  "homepage": "https://lionel-rowe.github.io",
+  "homepage": "https://www.lionelrowe.com",
   "sideEffects": [
     "./src/i18n.js",
     "*.css",
