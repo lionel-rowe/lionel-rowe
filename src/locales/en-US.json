@@ -9,6 +9,7 @@
     "title": "Lionel Rowe",
     "loading": "Loading…",
     "close": "Close",
+    "notFoundTitle": "Page Not Found",
 
     "allSelected": "All",
     "selectAll": "Select all",
@@ -40,8 +41,9 @@
       "body": "Body",
       "send": "Send",
       "reset": "Clear"
-    }
+    },
 
+    "egg": "🥚"
   },
 
   "meta": {

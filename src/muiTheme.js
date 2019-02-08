@@ -1,9 +1,8 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { /*darken,*/ lighten } from '@material-ui/core/styles/colorManipulator';
 
-const [primaryColor, secondaryColor] = ['#222333', '#f50057'];
+const [ primaryColor, secondaryColor, tertiaryColor ] = [ '#222333', '#f50057', '#0065ff' ];
 const white = '#ffffff';
-
 
 const theme = createMuiTheme({
   palette: {
@@ -17,6 +16,9 @@ const theme = createMuiTheme({
       gradient: `${secondaryColor}, #FF8E53`,
       contrastText: white,
       extraLight: lighten(secondaryColor, 0.5)
+    },
+    tertiary: {
+      main: tertiaryColor
     }
   },
   typography: {

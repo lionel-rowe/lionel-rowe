@@ -9,6 +9,7 @@
     "title": "罗宁",
     "loading": "加载中…",
     "close": "关闭",
+    "notFoundTitle": "未找到此页面",
 
     "allSelected": "全部",
     "selectAll": "全选",
@@ -40,8 +41,9 @@
       "body": "内容",
       "send": "发送",
       "reset": "清空"
-    }
+    },
 
+    "egg": "🥚"
   },
 
   "meta": {
@@ -53,5 +55,4 @@
   "tagline": "全栈互联网开发",
   "history": [],
   "contactInfo": {}
-
 }
