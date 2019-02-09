@@ -124,7 +124,7 @@
       "github": "https://github.com/lionel-rowe/symbolika",
       "shortDesc": "Search for and insert special characters from within your browser",
       "fullDesc": "A chrome extension allowing users to search for and insert over 28,000 unicode characters and emoji. Works with messaging apps, search engines, and more.\n\nDesign goals focused on initial load time and search speed, with a shared worker serving data from the front end.",
-      "technologies": ["Chrome API", "React", "ElasticLunr", "Web Workers"]
+      "technologies": ["Chrome API", "React", "ElasticLunr", "Web Workers", "Unicode"]
     },
     "b64": {
       "name": "b64",
@@ -133,7 +133,7 @@
       "github": "https://github.com/lionel-rowe/b64",
       "shortDesc": "Unicode (UTF-8) ⇔ Base64 converter",
       "fullDesc": "JavaScript’s native implementation of Base64 encoding and decoding fails for characters outside the Latin 1 range. This experimental project allows for Base64 encoding of arbitrary Unicode strings, using the popular UTF-8 encoding.\n\nThe web front-end is an experiment in progressive enhancement, providing a modern web-app experience for most users, while still allowing full functionality via the back end even if JavaScript is disabled.",
-      "technologies": ["Node.js", "Express", "Handlebars", "Progressive Enhancement"]
+      "technologies": ["Node.js", "Express", "Handlebars", "Unicode", "Base64", "Progressive Enhancement"]
     },
     "mixalot": {
       "name": "Mix-a-Lot",
@@ -151,7 +151,7 @@
       "github": "https://github.com/lionel-rowe/GoL",
       "shortDesc": "Implementation of John Conway’s famous cellular automaton",
       "fullDesc": "A performant, browser-based implementation of Conway’s Game of Life. This implementation includes a parser for RLE files, allowing players to upload and run their favorite patterns. Players can also draw patterns on the canvas using the mouse.",
-      "technologies": ["Bootstrap", "RLE"]
+      "technologies": ["Bootstrap", "HTML5 Canvas", "RLE"]
     },
     "secretGardens": {
       "name": "Secret Gardens",
