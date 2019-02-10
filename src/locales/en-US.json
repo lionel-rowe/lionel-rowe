@@ -132,8 +132,8 @@
       "url": "https://b64.glitch.me",
       "github": "https://github.com/lionel-rowe/b64",
       "shortDesc": "Unicode (UTF-8) ⇔ Base64 converter",
-      "fullDesc": "JavaScript’s native implementation of Base64 encoding and decoding fails for characters outside the Latin 1 range. This experimental project allows for Base64 encoding of arbitrary Unicode strings, using the popular UTF-8 encoding.\n\nThe web front-end is an experiment in progressive enhancement, providing a modern web-app experience for most users, while still allowing full functionality via the back end even if JavaScript is disabled.",
-      "technologies": ["Node.js", "Express", "Handlebars", "Unicode", "Base64", "Progressive Enhancement"]
+      "fullDesc": "JavaScript’s native implementation of Base64 encoding and decoding fails for characters outside the Latin 1 range. This project implements UTF-8 and Base64 encoding and decoding algorithms to provide Base64 encoding and decoding of arbitrary Unicode strings.\n\nThe web front-end is an experiment in progressive enhancement, providing a modern web-app experience for most users, while still allowing full functionality via the back end for legacy browsers.",
+      "technologies": ["Node.js", "Express", "Handlebars", "Unicode", "Base64", "Jest"]
     },
     "mixalot": {
       "name": "Mix-a-Lot",
@@ -150,8 +150,8 @@
       "url": "https://lionel-rowe.github.io/GoL/",
       "github": "https://github.com/lionel-rowe/GoL",
       "shortDesc": "Implementation of John Conway’s famous cellular automaton",
-      "fullDesc": "A performant, browser-based implementation of Conway’s Game of Life. This implementation includes a parser for RLE files, allowing players to upload and run their favorite patterns. Players can also draw patterns on the canvas using the mouse.",
-      "technologies": ["Bootstrap", "HTML5 Canvas", "RLE"]
+      "fullDesc": "A performant, browser-based implementation of Conway’s Game of Life. This implementation includes a parser for RLE files, allowing players to upload and run their favorite patterns. Players can also draw bitmap patterns on the canvas using the mouse.",
+      "technologies": ["Bootstrap", "HTML5 Canvas"]
     },
     "secretGardens": {
       "name": "Secret Gardens",
