@@ -1,25 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { withNamespaces } from 'react-i18next';
 
-class Title extends React.Component {
+const Title = props => {
+  const { t, i18nKey, children } = props;
 
-  setTitle = nextProps => {
-    const { t, i18nKey } = nextProps || this.props;
+  useEffect(() => {
+    document.title = `${t('ui.title')}${t('global.titleDelimiter')}${t(i18nKey)}`;
+  });
 
-    if (!nextProps || this.props.lng !== nextProps.lng) {
-      document.title = `${t('ui.title')}${t('global.titleDelimiter')}${t(i18nKey)}`;
-    }
-  }
-
-  componentDidMount = () => this.setTitle();
-
-  UNSAFE_componentWillReceiveProps = nextProps => this.setTitle(nextProps);
-
-  render() {
-    const { children } = this.props;
-
-    return <React.Fragment children={children} />;
-  }
+  return <React.Fragment children={children} />;
 }
 
 export default withNamespaces('translations')(Title);

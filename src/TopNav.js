@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Link } from '@reach/router';
 import { withNamespaces } from 'react-i18next';
@@ -21,73 +21,65 @@ const styles = theme => ({
   }
 });
 
-class TopNav extends React.Component {
+const TopNav = ({ t, i18n, classes }) => {
 
-  state = {
-    anchorEl: null
+  const [ anchorEl, setAnchorEl ] = useState(null);
+
+  const handleMenuOpen = e => {
+    setAnchorEl(e.currentTarget);
   };
 
-  handleMenuOpen = (e) => {
-    this.setState({ anchorEl: e.currentTarget });
+  const handleMenuClose = () => {
+    setAnchorEl(null);
   };
 
-  handleMenuClose = () => {
-    this.setState({ anchorEl: null });
+  const changeLanguage = lng => {
+    i18n.changeLanguage(lng);
+    handleMenuClose();
   };
 
-  changeLanguage = (lng) => {
-    this.props.i18n.changeLanguage(lng);
-    this.handleMenuClose();
-  };
+  return (
+    <AppBar component='nav' position='fixed' className={classes.gradientBar}>
+      <Toolbar>
+        <div className={classes.fullWidthTextLeft}>
+          <Link to='/' className={classes.unstyledLink}>
+            <Typography variant='h6' color='inherit'>
+              {t('fullName')}
+            </Typography>
+          </Link>
+        </div>
 
-  render() {
+        <div>
+          <IconButton
+            aria-owns={ anchorEl ? 'menu-appbar' : undefined }
+            aria-haspopup='true'
+            onClick={handleMenuOpen}
+            color='inherit'
+          >
+            <Translate />
+          </IconButton>
+          <Menu
+            id='menu-appbar'
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem onClick={() => changeLanguage('en-US')}>English</MenuItem>
+            <MenuItem onClick={() => changeLanguage('zh-CN')}>中文</MenuItem>
+          </Menu>
+        </div>
 
-    const { t, classes } = this.props;
-    const { anchorEl } = this.state;
-
-    return (
-      <AppBar component='nav' position='fixed' className={classes.gradientBar}>
-        <Toolbar>
-          <div className={classes.fullWidthTextLeft}>
-            <Link to='/' className={classes.unstyledLink}>
-              <Typography variant='h6' color='inherit'>
-                {t('fullName')}
-              </Typography>
-            </Link>
-          </div>
-
-          <div>
-            <IconButton
-              aria-owns={ anchorEl ? 'menu-appbar' : undefined }
-              aria-haspopup='true'
-              onClick={this.handleMenuOpen}
-              color='inherit'
-            >
-              <Translate />
-            </IconButton>
-            <Menu
-              id='menu-appbar'
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={!!anchorEl}
-              onClose={this.handleMenuClose}
-            >
-              <MenuItem onClick={() => this.changeLanguage('en-US')}>English</MenuItem>
-              <MenuItem onClick={() => this.changeLanguage('zh-CN')}>中文</MenuItem>
-            </Menu>
-          </div>
-
-        </Toolbar>
-      </AppBar>
-    );
-  }
+      </Toolbar>
+    </AppBar>
+  );
 }
 
 export default withNamespaces('translations')(withStyles(styles)(TopNav));

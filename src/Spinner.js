@@ -61,33 +61,30 @@ const styles = theme => {
   };
 };
 
-class Spinner extends React.Component {
+const Spinner = props => {
+  const { t, classes, scale, padding } = props;
 
-  render() {
-
-    const { t, classes, scale, padding } = this.props;
-
-    return (
-      <div style={{padding: padding}}>
+  return (
+    <div style={{padding: padding}}>
+      <div
+        className={classes.container}
+        style={{
+          zoom: scale && `${Math.ceil(scale * 100)}%`,
+          margin: '0 auto',
+        }}
+      >
         <div
-          className={classes.container}
-          style={{
-            zoom: scale && `${Math.ceil(scale * 100)}%`,
-            margin: '0 auto',
-          }}
+          className={classes.ldsRing}
+          aria-label={t('ui.loading')}
         >
-          <div
-            className={classes.ldsRing}
-            aria-label={t('ui.loading')}
-          >
-            <div className={[classes.ldsRingInner, classes.first].join(' ')}></div>
-            <div className={[classes.ldsRingInner, classes.second].join(' ')}></div>
-            <div className={[classes.ldsRingInner, classes.third].join(' ')}></div>
-          </div>
+          <div className={[classes.ldsRingInner, classes.first].join(' ')}></div>
+          <div className={[classes.ldsRingInner, classes.second].join(' ')}></div>
+          <div className={[classes.ldsRingInner, classes.third].join(' ')}></div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+
 }
 
 export default withNamespaces('translations')(withStyles(styles)(Spinner));
