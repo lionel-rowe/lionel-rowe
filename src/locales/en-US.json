@@ -49,7 +49,7 @@
   "meta": {
     "title": "Lionel Rowe :: Full-Stack Web Developer",
     "description": "Full-stack web developer specializing in vanilla JavaScript, React, and Ruby on Rails. Previously: tech writing and localization for Alibaba Cloud web apps. I like to build stuff that helps people be awesome at what they do.",
-    "image": "https://lionel-rowe.github.io/images/lionel.jpg",
+    "image": "https://www.lionelrowe.com/images/mugshot_square.jpg",
     "twitter_account": "",
     "url": "https://www.lionelrowe.com"
   },
@@ -57,7 +57,7 @@
   "fullName": "Lionel Rowe",
   "tagline": "Full-Stack Web Developer",
   "photo": {
-    "url": "images/lionel.jpg",
+    "url": "images/mugshot_square.jpg",
     "alt": "Lionel Rowe mugshot",
     "scale": 1
   },

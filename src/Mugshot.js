@@ -10,7 +10,7 @@ const Mugshot = props => {
         className='mugshot-frame'
         style={{
           background: `url(${path})`,
-          backgroundSize: !scale ? 'cover' : scale * 300,
+          backgroundSize: !scale ? 'cover' : scale * 250,
           backgroundClip: 'border-box',
           backgroundPosition: 'center'
         }}
